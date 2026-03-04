@@ -1,0 +1,17 @@
+{
+  "name": "ai-agent-dao-shu",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@iconify-json/carbon": "^1.2.8",
+    "@iconify-json/logos": "^1.2.7",
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-default": "latest",
+    "slidev-theme-penguin": "^2.3.1",
+    "vite-svg-loader": "^5.1.0"
+  }
+}
