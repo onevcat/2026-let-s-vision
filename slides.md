@@ -738,72 +738,83 @@ layout: center
 
 作为移动开发者，我们对这件事其实并不陌生。管理 context 就要像开发早期移动 App 那样去珍惜它，就像在管理移动设备上的内存一样。每一个 byte 都很宝贵，你不会把无关的东西加载到内存里；同样的，也不要把无关的信息塞进上下文。
 
-好，上下文的道和术讲完了，接下来进入第二组：积累。
--->
-
----
-layout: new-section
----
-
-# 积累
-
-Memory + Skill = 复利
-
-<!--
-第二组：积累。
-上下文的问题明确后，接下来看如何让经验不断积累、形成复利。
+好，上下文的道和术讲完了，接下来进入第二组：AI 使用的两极分化。
 -->
 
 ---
 layout: default
 ---
 
-# 约束二：Memory + Skill = 复利
+# 约束二：Agent 的天花板是人
 
-<div class="mt-6 grid grid-cols-2 gap-6">
+<div class="mt-1 text-base opacity-60">Agent 不会自动变强——能力上限由驾驭者决定</div>
+
+<div class="mt-5">
+<div class="text-sm font-semibold mb-3 text-gray-500 tracking-wide">SAME AGENT · DIFFERENT HUMANS</div>
+
+<div v-click class="bar-container">
+
 <div>
-
-### 个人 Memory <carbon-user class="inline text-teal-500" />
-
-<v-clicks>
-
-- 偏好、约束、踩坑、决策理由
-- 减少重复沟通与重复踩坑
-- 让 agent 越来越"懂你"
-
-</v-clicks>
-
+  <div class="flex items-center justify-between mb-2">
+    <span class="text-base font-bold text-teal-700"><carbon-user class="inline" /> 高手</span>
+    <span class="text-sm text-teal-600">指挥多个 Agents · 丰富 Memory + Skill</span>
+  </div>
+  <div class="h-12 rounded-lg bg-gray-100 overflow-hidden">
+    <div class="bar-fill h-full rounded-lg bg-gradient-to-r from-teal-400 to-teal-600" style="--bar-width: 90%"></div>
+  </div>
 </div>
+
+<div class="my-2 flex items-center justify-center gap-2 text-orange-400">
+  <div class="flex-1 border-t border-dashed border-orange-200"></div>
+  <span class="text-sm font-bold px-2"><carbon-arrows-vertical class="inline text-xs" /> 差距数十倍</span>
+  <div class="flex-1 border-t border-dashed border-orange-200"></div>
+</div>
+
 <div>
-
-### 团队 Memory <carbon-group class="inline text-teal-500" />
-
-<v-clicks>
-
-- 把个人技巧沉淀为**可复用资产**
-- Skill 化：一次成功 → 模板 / runbook / 脚手架
-- **渐进式披露**：在不同阶段给 agent 恰当信息
-
-</v-clicks>
+  <div class="flex items-center justify-between mb-2">
+    <span class="text-base font-bold text-gray-500"><carbon-user class="inline" /> 入门</span>
+    <span class="text-sm text-gray-500">零积累 · 还在摸索阶段或当成 Chatbot</span>
+  </div>
+  <div class="h-12 rounded-lg bg-gray-100 overflow-hidden">
+    <div class="bar-fill h-full rounded-lg bg-gradient-to-r from-gray-200 to-gray-300" style="--bar-width: 10%"></div>
+  </div>
+</div>
 
 </div>
 </div>
 
-<div class="mt-6 text-center text-sm opacity-60" v-click>
-  没有记忆系统，就没有 AI 协作的长期复利
+<div v-click class="mt-5 p-4 rounded-xl border border-orange-100 bg-gradient-to-br from-orange-50 to-white flex items-start gap-4">
+  <carbon-warning-alt class="text-2xl text-orange-500 flex-shrink-0 mt-0.5" />
+  <div>
+    <div class="font-bold text-lg">同一模型，效能差距巨大</div>
+    <div class="text-base mt-1 opacity-70">员工差距远超 Agent 前时代——AI 使用能力高度个体化，个人强 ≠ 组织强</div>
+  </div>
 </div>
+
+<style>
+.bar-fill {
+  width: 0%;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.bar-container:not(.slidev-vclick-hidden) .bar-fill {
+  width: var(--bar-width);
+}
+</style>
 
 <!--
-约束二：Memory + Skill 决定复利。
+约束二：Agent 的天花板是人。
+我们观察到不同的人在使用AI时的效率差距非常大。
+Agent 不会自动变强，能力上限取决于驾驭它的人。
+同一个 Claude Code 或 Codex，高手和入门者用出来的效果天差地别。
 
-个人 memory：记住偏好、约束、踩过的坑、关键决策理由。
-减少重复沟通与重复踩坑，让 agent 越来越"懂你"。
+[click] 直观看：高手有丰富的 Memory 和 Skill 积累，入门者零积累。
+有的员工能一天解决十多个 issue，同时高质量完成 PR 和各种 spec 评审；
+有的员工还在古法编程，差距可能有数十倍。
+这不是模型的问题，是人的问题。
 
-团队 memory：把个人经验变成组织资产。
-skill 化目标：把一次成功转为模板、runbook、脚手架。
-
-本质都是"渐进式披露（progressive disclosure）"的实践：
-在不同阶段给 agent 恰当粒度的信息与能力。
+[click] 而且这个差距远超 Agent 前时代。以前大家效率差个两三倍顶天了，
+现在 AI 使用能力高度个体化，拉开的差距是数量级的。
+个人强不等于组织强，这个差距如果不主动治理，会变成团队断层。
 -->
 
 ---
@@ -830,6 +841,7 @@ layout: default
 - 实践推广大多是**自下而上**的
 - 个体高手经验 → 团队共识
 - 传统自上而下路径在这个周期里偏慢
+- 对齐关键：让高手的 Memory/Skill **可沉淀、可分享**
 
 </div>
 
@@ -850,15 +862,11 @@ layout: default
 </div>
 
 <!--
-公司观察：高手飞轮 vs 团队断层。
+AI的两极分化大部分是闻道有先后造成的。
+但这里存在的"少数人飞起、多数人观望"的组织问题是实际存在和需要解决的。
 
-AI 时代常见组织问题是"少数人飞起、多数人观望"的效率断层。
-AI 使用能力高度个体化，个人强不等于组织强。
-个性化 AI 可能提高个人效率，但会加剧团队共识碎片化风险。
-
-关键观察：这类实践推广大多是自下而上的（个体高手经验 -> 团队共识）。
-传统自上而下路径在这个周期里通常偏慢。
-怎么让少数人带动多数人？工具策略是第一步。
+组织里会有一些约定的实践，比如通用的 skill 和 workflow 等。很多这些实践的推广大多是自下而上的。
+传统自上而下路径在这个周期里通常偏慢——等制度跟上，可能高手已经迭代三轮了。反过来，让这些高手能带动团队一起进步，可能是更正确的方向。
 -->
 
 ---
