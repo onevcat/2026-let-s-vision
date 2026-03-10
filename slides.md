@@ -256,83 +256,116 @@ layout: default
 layout: default
 ---
 
-# PR 趋势 <carbon-chart-line class="inline text-teal-500" />
+# 每周 PR 数量 <carbon-chart-line class="inline text-teal-500" />
 
-<div class="mt-6 flex items-center gap-8">
-<div class="flex-1">
+<img src="/1_weekly_pr_count.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<v-clicks>
-
-- 产出速度明显加快
-- 但 review / 验收 / 质量控制形态也在**同步重构**
-- 不是简单的"多了"，而是生产模式在变
-
-</v-clicks>
-
-</div>
-<div class="w-80 h-48 rounded-xl bg-gradient-to-br from-teal-50 to-teal-50 border border-teal-100 flex items-center justify-center">
-  <div class="text-sm opacity-40">[PR Trend Chart]</div>
-</div>
+<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
+  PR 总量保持稳定，趋势线微降——不是产出变少了，而是 PR 粒度在变大
 </div>
 
 <!--
-PR 趋势图（第一张趋势图）。
+第一张趋势图：每周 PR 数量。
 
-核心信息：产出变快了，但不只是数量变化。
-review 方式、验收标准、质量控制的形态都在同步重构。
-以前一个人写完提 PR 等 review。
-现在可能是 agent 写完，人来 review，但 review 的内容和方式都不一样了。
+趋势线斜率 -1.6/周，但整体量级保持稳定。
+看起来 PR 数量没有爆发式增长，反而微降。
+这不是产出变少了——而是 PR 的粒度在变大。
 
-只展示趋势线，不标绝对值。
+以前一个小改动一个 PR，现在 Agent 一次可以完成更完整的任务，
+所以单个 PR 的改动量在增加，PR 数量反而不需要更多了。
+生产模式在变化。
 -->
 
 ---
 layout: default
 ---
 
-# Backlog 与 AI 使用趋势
+# PR 合并效率 <carbon-chart-line class="inline text-teal-500" />
 
-<div class="mt-4 grid grid-cols-2 gap-8">
-<div>
+<img src="/2_monthly_merge_time.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-### Issue / Backlog <carbon-task-complete class="inline text-green-500" />
-
-<v-clicks>
-
-- 启动成本下降
-- 但**不等于**自动清空 backlog
-- 问题定义质量决定消化速度
-
-</v-clicks>
-
-</div>
-<div>
-
-### AI 高使用占比 <carbon-growth class="inline text-orange-500" />
-
-<v-clicks>
-
-- 先出现**高手飞轮**效应
-- 少数人的效率提升 10x 甚至 100x
-- 关键问题：能否组织化扩散？
-
-</v-clicks>
-
-</div>
+<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
+  均值从 50+ 小时降至 20 小时，中位数降至个位——Review 效率在倍增
 </div>
 
 <!--
-两张趋势图合并讲。
+第二张趋势图：PR 平均合并时间。
 
-Issue/backlog 趋势：启动成本下降了（因为可以更快地开始做一个任务），
-但不等于 backlog 自动减少——如果问题定义不清楚，agent 也帮不上忙。
+均值从 8 月的 51 小时降至 3 月的 20 小时，中位数更是降到了 6.5 小时。
+这意味着 review 和合并的效率在显著提升。
 
-AI 高使用占比趋势：先出现"高手飞轮"——
-少数善于使用 AI 的工程师效率飙升（10x 甚至 100x）。
-关键问题是，这种能力能否从个人扩散为组织能力。
-如果不能扩散，就会形成 AI 格差。
+一方面是 AI 生成的 PR 更规范、更容易 review；
+另一方面团队也在适应新的 review 节奏——
+不再是"等人来看"，而是更主动、更快速地验收。
+-->
 
-所有数据：只讲趋势不讲绝对值；不展示可回推信息。
+---
+layout: default
+---
+
+# AI 协作占比 <carbon-chart-line class="inline text-teal-500" />
+
+<img src="/3_ai_coauthor_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
+
+<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
+  半年内从 1% 飙升至 40%——AI 协作已从尝鲜变为常态
+</div>
+
+<!--
+第三张趋势图：AI Co-Authored PR 占比。
+
+这张图最直观：从 2025 年 8 月的 1.1%，到 2026 年 3 月的 39.8%。
+半年时间，AI 协作占比增长了近 40 倍。
+
+注意增长曲线的形态——不是线性增长，而是指数型的。
+2025 年底开始加速，和模型能力的台阶式提升（Opus 4.5、GPT-5.2 Codex）高度吻合。
+AI 协作已经从少数人的尝鲜变成了团队的日常。
+-->
+
+---
+layout: default
+---
+
+# Issue 消化趋势 <carbon-chart-line class="inline text-teal-500" />
+
+<img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
+
+<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
+  Net Change 趋近零线——解决速度追上了创建速度，Backlog 不再膨胀
+</div>
+
+<!--
+第四张趋势图：JIRA Issue 创建 vs 解决。
+
+重点看橙色的 Net Change 线：从 10 月的高峰下降到接近零线。
+这意味着 Issue 的解决速度追上了创建速度，Backlog 不再膨胀。
+
+但注意：这不是因为创建变少了（红色柱子一直在），
+而是解决速度在加快（蓝色柱子追上来了）。
+AI 帮助团队更快地消化任务，但前提是问题定义要清晰。
+-->
+
+---
+layout: default
+---
+
+# AI 使用两极分化 <carbon-chart-line class="inline text-teal-500" />
+
+<img src="/5_ai_developer_scatter.png" class="mt-4 mx-auto rounded-lg shadow-sm" style="max-height: 420px;" />
+
+<!--
+最后一张：开发者 AI 使用分布散点图。
+
+横轴是总 Commit 数（产出量），纵轴是 AI Co-Author 占比。
+四个象限非常清晰：
+
+右上：高产出 + 高 AI 使用——这就是"高手飞轮"。
+左上：低产出但高 AI 使用——可能在学习或做探索性任务。
+右下：高产出但低 AI 使用——传统高手，还没开始用 AI。
+底部大量蓝点：AI 使用为零——还完全没有开始。
+
+这张图最直观地展示了我们后面要讨论的"AI 格差"问题。
+团队里的两极分化已经形成，需要主动治理。
 -->
 
 ---
