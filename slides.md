@@ -1064,19 +1064,6 @@ Memory 做沉淀，Skill 做分享，两条腿走路。
 -->
 
 ---
-layout: new-section
----
-
-# 协作
-
-从人指挥到 Agent 自协作
-
-<!--
-第三组：协作。
-有了上下文和积累的基础，最后看协作范式如何演进，以及怎么把任务交给 agent。
--->
-
----
 layout: default
 ---
 
@@ -1085,39 +1072,43 @@ layout: default
 <div class="mt-6">
 
 <div class="grid grid-cols-2 gap-8">
-<div class="p-6 rounded-xl bg-gray-50 border border-gray-200 text-center" v-click>
-  <div class="text-sm opacity-60 mb-2">当前</div>
-  <div class="text-lg font-bold mb-3">人 → 多 Agent</div>
-  <carbon-user class="text-2xl text-teal-500 mx-1" />
-  <carbon-arrow-right class="text-xl text-gray-400 mx-1" />
-  <carbon-bot class="text-2xl text-gray-500 mx-1" />
-  <carbon-bot class="text-2xl text-gray-500 mx-1" />
-  <carbon-bot class="text-2xl text-gray-500 mx-1" />
-  <div class="text-xs opacity-50 mt-3">人工编排，注意力是瓶颈</div>
+<div class="p-8 rounded-xl bg-gray-50 border border-gray-200 text-center" v-click>
+  <div class="text-base text-gray-500 mb-2">当前</div>
+  <div class="text-xl font-bold mb-4">人 → 多 Agent</div>
+  <carbon-user class="text-3xl text-teal-500 mx-1" />
+  <carbon-arrow-right class="text-2xl text-gray-400 mx-1" />
+  <carbon-bot class="text-3xl text-gray-500 mx-1" />
+  <carbon-bot class="text-3xl text-gray-500 mx-1" />
+  <carbon-bot class="text-3xl text-gray-500 mx-1" />
+  <div class="text-sm text-gray-500 mt-4">人工编排，注意力是瓶颈</div>
 </div>
 
-<div class="p-6 rounded-xl bg-teal-50 border border-teal-200 text-center" v-click>
-  <div class="text-sm text-teal-600 mb-2">下一阶段</div>
-  <div class="text-lg font-bold text-teal-800 mb-3">Agent ↔ Agent</div>
-  <carbon-bot class="text-2xl text-teal-500 mx-1" />
-  <carbon-connect class="text-xl text-teal-400 mx-1" />
-  <carbon-bot class="text-2xl text-teal-500 mx-1" />
-  <carbon-connect class="text-xl text-teal-400 mx-1" />
-  <carbon-bot class="text-2xl text-teal-500 mx-1" />
-  <div class="text-xs text-teal-600 mt-3">自协作，人做策略与兜底</div>
+<div class="p-8 rounded-xl bg-teal-50 border border-teal-200 text-center" v-click>
+  <div class="text-base text-teal-600 mb-2">下一阶段</div>
+  <div class="text-xl font-bold text-teal-800 mb-4">Agent ↔ Agent</div>
+  <carbon-bot class="text-3xl text-teal-500 mx-1" />
+  <carbon-connect class="text-2xl text-teal-400 mx-1" />
+  <carbon-bot class="text-3xl text-teal-500 mx-1" />
+  <carbon-connect class="text-2xl text-teal-400 mx-1" />
+  <carbon-bot class="text-3xl text-teal-500 mx-1" />
+  <div class="text-sm text-teal-700 mt-4">自协作，人做策略与兜底</div>
 </div>
 </div>
 
-<div class="mt-6 text-center text-sm opacity-60" v-click>
+<div class="mt-6 text-center text-base text-gray-500" v-click>
   直接驱动因子：开发者注意力稀缺
 </div>
 
 </div>
 
 <!--
-约束三：协作范式在变。
+我们在团队里推进AI进程时，和项目里的高手们聊天和访谈时..
+可能算是一个预言，或者说是未来的展望
+开发的协作范式在变。
 
-当前在卷"人指挥多 agent"——因为开发者注意力是稀缺资源。
+AI 时代前就不说了，人和人的关系，大家都熟悉
+
+[click] 在当下，在卷"人指挥多 agent"——因为开发者注意力是稀缺资源。
 典型场景：你同时开几个 agent，一个查代码，一个写实现，一个跑测试。
 但这种手动编排多个 agent 是过渡态。
 
@@ -1130,111 +1121,236 @@ layout: default
 layout: default
 ---
 
-# 跨越点：人工监督 → 无人职守
+# 现状：Human in the Loop
 
-<div class="mt-6">
+<div class="mt-2 text-base text-gray-500">中间过程已自动化，但起点和终点仍是人</div>
 
-<div class="flex items-center justify-center gap-4 mb-6">
-  <div class="px-5 py-3 rounded-xl bg-gray-100 font-bold">
-    <carbon-view class="inline mr-1 text-gray-600" /> 人工监督
-  </div>
-  <div class="flex flex-col items-center">
-    <carbon-arrow-right class="text-3xl text-teal-500" />
-    <div class="text-xs text-teal-600 font-semibold mt-1">关键跨越</div>
-  </div>
-  <div class="px-5 py-3 rounded-xl bg-teal-600 text-white font-bold">
-    <carbon-workflow-automation class="inline mr-1" /> 无人职守
-  </div>
+<div class="mt-10 flex items-center justify-center gap-4">
+
+<div v-click class="flex-1 rounded-2xl bg-gray-50 border border-gray-200 p-6 shadow-sm flex flex-col items-center justify-center text-center">
+  <carbon-user class="text-4xl mb-3 text-gray-600" />
+  <div class="text-xl font-bold text-gray-800 mb-2">人启动</div>
+  <div class="text-sm text-gray-500 leading-relaxed">打开 CLI / Agent App<br/>输入提示词</div>
 </div>
 
-<div class="grid grid-cols-3 gap-4" v-click>
-<div class="p-4 rounded-lg bg-gray-50 border border-gray-200 text-center">
-  <carbon-webhook class="text-2xl text-purple-500 mb-2" />
-  <div class="text-sm font-semibold">Webhook</div>
-  <div class="text-xs opacity-50">事件触发</div>
-</div>
-<div class="p-4 rounded-lg bg-gray-50 border border-gray-200 text-center">
-  <carbon-time class="text-2xl text-green-500 mb-2" />
-  <div class="text-sm font-semibold">Cron</div>
-  <div class="text-xs opacity-50">定时触发</div>
-</div>
-<div class="p-4 rounded-lg bg-gray-50 border border-gray-200 text-center">
-  <carbon-flow class="text-2xl text-orange-500 mb-2" />
-  <div class="text-sm font-semibold">Event Pipeline</div>
-  <div class="text-xs opacity-50">流水线触发</div>
-</div>
+<div v-click class="flex items-center flex-shrink-0">
+  <carbon-arrow-right class="text-3xl text-gray-300" />
 </div>
 
-<div class="mt-6 p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800" v-click>
-  <carbon-warning class="inline mr-1" /> 风险提示：在极端自动化闭环里，人可能被挤出执行环节，只保留责任承担角色。跨过这条线，就回不了头了。
+<div v-click class="flex-1 rounded-2xl bg-teal-50 border border-teal-200 p-6 shadow-sm flex flex-col items-center justify-center text-center">
+  <carbon-bot class="text-4xl mb-3 text-teal-600" />
+  <div class="text-xl font-bold text-teal-800 mb-2">Agent 执行</div>
+  <div class="text-sm text-teal-600 leading-relaxed">跑完流程<br/>生成 PR 并提交</div>
 </div>
 
+<div v-click class="flex items-center flex-shrink-0">
+  <carbon-arrow-right class="text-3xl text-gray-300" />
+</div>
+
+<div v-click class="flex-1 rounded-2xl bg-gray-50 border border-gray-200 p-6 shadow-sm flex flex-col items-center justify-center text-center">
+  <carbon-user class="text-4xl mb-3 text-gray-600" />
+  <div class="text-xl font-bold text-gray-800 mb-2">人审核</div>
+  <div class="text-sm text-gray-500 leading-relaxed">Review 结果<br/>最终决策</div>
+</div>
+
+</div>
+
+<div v-click class="mt-10 mx-auto pl-5 border-l-3 border-gray-300 text-xl text-gray-500" style="max-width: 80%;">
+  我们的中期目标：把人从 Loop 中移除，走向无人值守
 </div>
 
 <!--
-跨越点：从人工监督到无人职守。
+这一页先看现状：企业开发中，人在 Agent Loop 里的参与方式是什么样的？
 
-这是智能体工程化最关键的一次跨越。跨过这条线，就回不了头了。
+[click] 第一步，人启动——坐到电脑前，打开 CLI 或者 Agent App，输入一段提示词，告诉 Agent 今天想做什么。
+[click] 第二步，Agent 执行——跑完所有流程，生成一个 PR 提交出来，告知任务完成。
+[click] 第三步，人审核——最后还是人去 Review、做最终决策。
 
-典型触发方式：
-- Webhook：事件驱动，PR 提交后自动 review
-- Cron：定时触发，每天自动清理 backlog
-- Event Pipeline：流水线触发，CI 失败后自动修复
+中间过程确实已经自动化了，但整个 Loop 的起点是人，终点也是人。这就是现状。
 
-风险提示：在极端自动化闭环里，人可能被挤出执行环节，只保留责任承担角色。
-跨越点明确了，怎么把任务交给 agent？关键是任务切分。
+[click] 如果我们想跨越这一点，最核心的就是把人的角色从整个 Loop 中去掉。
+从 Human in the Loop，走向无人值守。接下来分两步讲：怎么去掉起点的人，怎么去掉终点的人。
 -->
 
 ---
 layout: default
 ---
 
-# 任务切分：可验收交付单元
+# 去掉起点：自动触发
+
+<div class="mt-2 text-base text-gray-500">CI/CD 时代的成熟工具链，可直接复用</div>
+
+<div class="mt-8 space-y-4">
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-teal-600 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-teal-50 border border-teal-200">
+    <div class="font-bold text-teal-800 text-base">Webhook 事件触发</div>
+    <div class="text-sm text-teal-600 mt-1">PR 提交、Issue 创建、Code Review 请求 → 自动启动 Agent</div>
+  </div>
+</div>
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-teal-500 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-teal-50 border border-teal-200">
+    <div class="font-bold text-teal-800 text-base">Cron 定时触发</div>
+    <div class="text-sm text-teal-600 mt-1">Backlog 清理、依赖更新、自动化重构 → 无人坚守的持续改进</div>
+  </div>
+</div>
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-teal-400 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-teal-50 border border-teal-200">
+    <div class="font-bold text-teal-800 text-base">Pipeline 上游触发</div>
+    <div class="text-sm text-teal-600 mt-1">CI 失败自动修复、构建完成触发部署、上游变更级联更新</div>
+  </div>
+</div>
+
+</div>
+
+<div v-click class="mt-8 mx-auto pl-5 border-l-3 border-teal-300 text-xl text-gray-500" style="max-width: 80%;">
+  不需要人坐到电脑前——事件发生时，Agent 自动响应
+</div>
+
+<!--
+怎么去掉起点的「人」？
+
+其实从上一代 CI 自动化开始，已经有很多现成的工具可以做这件事。
+
+[click] Webhook 事件触发——PR 提交、Issue 创建这些事件发生时，自动启动 Agent 来处理。
+[click] Cron 定时触发——定时巡检、清理 Backlog、更新依赖，这些日常维护不需要人来发起。
+[click] Pipeline 上游触发——CI 失败后自动修复，构建完成后自动触发部署，上游变更级联更新下游。
+
+[click] 这些触发方式都是 CI/CD 时代成熟的工具链，直接复用就行。
+做的内容有一部分是以前依靠脚本的，比如依赖更新，一些资源文件的生成等
+另一些是 agent 时代的，自动重构，自主 CI 修复等
+不需要人坐到电脑前打开工具输入提示词，事件发生时 Agent 自动响应。
+起点解决相对容易，接下来看终点——验收怎么自动化。
+-->
+
+---
+layout: default
+---
+
+# 去掉终点：自动验收
+
+<div class="mt-2 text-base text-gray-500">验收标准前置，让 Agent 自证完成</div>
+
+<div class="mt-8 space-y-4">
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-purple-600 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-purple-50 border border-purple-200">
+    <div class="font-bold text-purple-800 text-base">测试守门</div>
+    <div class="text-sm text-purple-600 mt-1">单元 / 集成 / UI 测试全部通过 → 前置门槛</div>
+  </div>
+</div>
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-purple-500 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-purple-50 border border-purple-200">
+    <div class="font-bold text-purple-800 text-base">Agent Review</div>
+    <div class="text-sm text-purple-600 mt-1">用另一个 Agent 做 Code Review → 交叉验证</div>
+  </div>
+</div>
+
+<div v-click class="flex items-stretch gap-3">
+  <div class="w-1.5 rounded-full bg-purple-400 flex-shrink-0"></div>
+  <div class="flex-1 px-5 py-4 rounded-xl bg-purple-50 border border-purple-200">
+    <div class="font-bold text-purple-800 text-base">视觉验证</div>
+    <div class="text-sm text-purple-600 mt-1">自动跑起 App、按需自动操作、截图 / 录屏 → 自然语言断言的 E2E 测试</div>
+  </div>
+</div>
+
+</div>
+
+<div v-click class="mt-8 mx-auto pl-5 border-l-3 border-purple-300 text-xl text-gray-500" style="max-width: 80%;">
+  先定义「怎么算做完」，再开始做——人只在异常时介入
+</div>
+
+<!--
+起点解决了，终点怎么办？怎么去掉最后「人审核」这一步？
+
+核心思路是：验收标准前置，让 Agent 自己证明任务完成。
+
+[click] 第一层，测试守门——单元、集成、UI 测试全部通过，作为 PR 合入的前置条件。这是最基本的自动验收。
+[click] 第二层，Agent Review——用另一个 Agent 来做 Code Review，交叉验证产出质量。不是自己改自己审，而是有独立的验证者。
+[click] 第三层，视觉验证——自动把 App 跑起来，重放之前录制的 UI 操作流程，进行截图或录屏。
+这个产出物有两个用途：一方面可以辅助人工验证，人类想看的其实就是操作过程和最终结果；
+另一方面，现在的 AI 有很强的视觉能力，可以直接在视觉层面确认是否满足验收需求。
+
+[click] 关键原则是：先定义「怎么算做完」，再开始做。
+有了这套验收机制，人只需要在异常情况时介入，日常流程完全无人值守。
+-->
+
+---
+layout: default
+---
+
+# 新时代的 BDD
 
 <div class="mt-6">
 
-<div class="text-base mb-6">让 agent 接受的不是模糊需求，而是<strong>可验收的工作单元</strong></div>
-
-<div class="grid grid-cols-4 gap-4" v-click>
-<div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-center">
-  <carbon-pull-request class="text-2xl text-teal-500 mb-2" />
-  <div class="text-sm font-bold">PR</div>
-</div>
-<div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-center">
-  <carbon-code class="text-2xl text-green-500 mb-2" />
-  <div class="text-sm font-bold">Patch</div>
-</div>
-<div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-center">
-  <carbon-application class="text-2xl text-purple-500 mb-2" />
-  <div class="text-sm font-bold">Demo</div>
-</div>
-<div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-center">
-  <carbon-document class="text-2xl text-orange-500 mb-2" />
-  <div class="text-sm font-bold">Reply Draft</div>
-</div>
+<div v-click class="px-5 py-4 rounded-xl bg-teal-50 border border-teal-200 mb-6">
+  <div class="font-bold text-teal-800 text-base mb-1">核心原则：每个任务必须有 Spec</div>
+  <div class="text-sm text-teal-600">把任务切分为合理的单元，配备完整的、可追溯的文档，让无人值守的 Loop 能跑起来</div>
 </div>
 
-<div class="mt-6 p-4 rounded-lg bg-teal-50 border border-teal-100" v-click>
-  <div class="text-sm font-semibold text-teal-800 mb-1">
-    <carbon-transform-instructions class="inline mr-1" /> 角色转变
+<div v-click class="mb-4 font-bold text-base">Spec 的形态因任务而异</div>
+
+<div v-click class="grid grid-cols-2 gap-3">
+  <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
+    <div class="flex items-center gap-2">
+      <carbon-pull-request class="text-xl text-teal-500 flex-shrink-0" />
+      <div class="font-bold text-sm">PR Review</div>
+    </div>
+    <div class="text-sm text-gray-500 mt-1">Spec = PR Description</div>
   </div>
-  <div class="text-xs text-teal-700">
-    工程师从"亲自实现者"转向"任务编排 + 质量守门"
+  <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
+    <div class="flex items-center gap-2">
+      <carbon-task class="text-xl text-teal-500 flex-shrink-0" />
+      <div class="font-bold text-sm">Feature Issue</div>
+    </div>
+    <div class="text-sm text-gray-500 mt-1">Spec = 确认后的 Wiki 文档</div>
+  </div>
+  <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
+    <div class="flex items-center gap-2">
+      <carbon-debug class="text-xl text-teal-500 flex-shrink-0" />
+      <div class="font-bold text-sm">Bug Fix</div>
+    </div>
+    <div class="text-sm text-gray-500 mt-1">Spec = QA Ticket 复现步骤</div>
+  </div>
+  <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
+    <div class="flex items-center gap-2">
+      <carbon-warning-alt class="text-xl text-teal-500 flex-shrink-0" />
+      <div class="font-bold text-sm">CI Failure</div>
+    </div>
+    <div class="text-sm text-gray-500 mt-1">Spec = CI 错误 Log</div>
   </div>
 </div>
 
 </div>
 
 <!--
-任务切分：可验收交付单元。从道到术。
+从这一页开始，我们从「道」进入「术」。
 
-先定义交付物：PR / patch / demo / 回复草稿。
-每种交付物都有明确的"完成"标准。
+前面几页讲的是趋势和方向——怎么把人从 Loop 中移除，走向无人值守。
+那具体怎么做？术的第一点，就是任务切分。
 
-关键是让 agent 接受的不是"帮我改一下这个功能"这种模糊需求，
-而是"生成一个 PR，包含这些改动，通过这些测试"。
+[click] 核心原则：每个任务必须有 Spec。
+把任务切分得合理、合适，配备完整的、可追溯的一组文档套件，让前面说的无人值守 Loop 真正跑起来。
 
-工程师角色转变：从"亲自实现"转向"任务编排 + 质量守门"。
+[click] Spec 的形态因任务类型而异。
+
+[click] 举几个例子：
+- PR Review：Spec 就是 PR Description，描述变更意图和影响范围。
+- Feature Issue：Spec 是和 Designer 或 Planner 确认好的 Wiki 文档。
+- Bug Fix：Spec 是 Ticket 里 QA 汇报的复现步骤加期望行为。
+- CI Failure：Spec 就更简单了，就是 CI 错误信息的 Log。
+
+核心就是：在 AI 任务的起始点，必须有一个稳定的上下文告诉 AI 情况。
+这个上下文可以是各种形态——PR Description、Wiki、Ticket、Log 都行，关键是它必须存在、必须可获取。
+这就是新时代的 BDD：不是先写代码再补文档，而是先有 Spec，再让 Agent 按 Spec 执行、按 Spec 验收。
 -->
 
 ---
@@ -1243,40 +1359,40 @@ layout: default
 
 # 验收前置
 
-<div class="mt-6">
+<div class="text-base text-gray-500">先定义"怎么算做完"，再开始做</div>
 
-<div class="text-base mb-4">先定义"怎么算做完"，再开始做</div>
+<div class="mt-6 grid grid-cols-2 gap-5">
 
-<div class="grid grid-cols-4 gap-4">
-
-<div class="p-4 rounded-xl border border-green-200 bg-green-50" v-click>
-  <carbon-checkmark-filled class="text-xl text-green-600 mb-2" />
-  <div class="text-sm font-bold text-green-800">测试</div>
-  <div class="text-xs text-green-600 mt-1">单元 / 集成 / UI</div>
+<div v-click class="px-6 py-5 rounded-xl bg-red-50 border border-red-200">
+  <div class="flex items-center gap-2">
+    <carbon-close-filled class="text-xl text-red-500 flex-shrink-0" />
+    <div class="font-bold text-red-800 text-lg">事后生成测试</div>
+  </div>
+  <div class="text-base text-red-600 mt-2">把实现翻译成测试，低质量测试，人几乎无法验收</div>
 </div>
 
-<div class="p-4 rounded-xl border border-teal-200 bg-teal-50" v-click>
-  <carbon-catalog class="text-xl text-teal-600 mb-2" />
-  <div class="text-sm font-bold text-teal-800">日志</div>
-  <div class="text-xs text-teal-600 mt-1">行为链路可追溯</div>
+<div v-click class="px-6 py-5 rounded-xl bg-teal-50 border border-teal-200">
+  <div class="flex items-center gap-2">
+    <carbon-checkmark-filled class="text-xl text-teal-500 flex-shrink-0" />
+    <div class="font-bold text-teal-800 text-lg">根据 Spec 生成 Spec Test</div>
+  </div>
+  <div class="text-base text-teal-600 mt-2">Review 对象从代码变成 Spec，验收成本大幅降低</div>
 </div>
 
-<div class="p-4 rounded-xl border border-orange-200 bg-orange-50" v-click>
-  <carbon-undo class="text-xl text-orange-600 mb-2" />
-  <div class="text-sm font-bold text-orange-800">回滚</div>
-  <div class="text-xs text-orange-600 mt-1">可逆性保障</div>
+<div v-click class="px-6 py-5 rounded-xl bg-gray-50 border border-gray-200">
+  <div class="flex items-center gap-2">
+    <carbon-translate class="text-xl text-teal-500 flex-shrink-0" />
+    <div class="font-bold text-lg">BDD 天然贴近自然语言</div>
+  </div>
+  <div class="text-base text-gray-500 mt-2">LLM 做自然语言 → 自然语言的翻译，几乎无损</div>
 </div>
 
-<div class="p-4 rounded-xl border border-red-200 bg-red-50" v-click>
-  <carbon-warning-alt class="text-xl text-red-600 mb-2" />
-  <div class="text-sm font-bold text-red-800">风险列表</div>
-  <div class="text-xs text-red-600 mt-1">已知风险前置声明</div>
-</div>
-
-</div>
-
-<div class="mt-8 text-center text-sm opacity-60" v-click>
-  验收标准前置 = 减少返工 + 提高 agent 产出可信度
+<div v-click class="px-6 py-5 rounded-xl bg-teal-50 border border-teal-200">
+  <div class="flex items-center gap-2">
+    <carbon-user class="text-xl text-teal-500 flex-shrink-0" />
+    <div class="font-bold text-lg">开发者的新任务</div>
+  </div>
+  <div class="text-base text-teal-600 mt-2">把 Idea 翻译成可自动化测试的案例</div>
 </div>
 
 </div>
@@ -1284,21 +1400,18 @@ layout: default
 <!--
 验收前置：先定义"怎么算做完"，再开始做。
 
-着重提一下测试 BDD:
-- 最接近自然语言的测试
-- 天生适合作为 spec 规范
-- LLM 通过自然语言生成测试
-- 然后代码实现时由测试确保
+[click] 先说一个我们实践中发现的问题：观察到很多团队成员的做法是先让AI写好实现，然后事后生成测试。我们的经验是，这种做法没有太大用处。很多时候AI只是把实现代码翻译成了测试代码，并没有真正验证行为，或者验证得十分低效。
+人去 Review 这些测试也非常困难——一个是量一般很多有没啥营养，另一个是你需要在脑中把代码语言翻译成原始的想法，和实际需要验证的东西对应起来。
+这个过程太复杂了，耗时且难以抓到问题。
 
-验收标准要前置定义：
-- 测试：单元/集成/UI 测试覆盖
-- 日志：行为链路可追溯
-- 回滚：可逆性保障，出问题能回退
-- 风险列表：已知风险前置声明
+[click] 更正确的做法是：根据上下文，也就是 Spec，生成 Spec Test。
+谁写的东西谁 review：人类应该 Review 的是驱动 AI 的 Spec，而不是 AI 写的代码。验收的对象从代码变成 Spec，记住这个 spec 是自然语言，人类读起来成本大幅降低。
 
-验收标准前置的好处：减少返工 + 提高 agent 产出的可信度。
-如果你不告诉 agent 怎么验证，它就不会自验。
-三组道术讲完，来看整体的工程价值变化。
+[click] 为什么这种方式有效？因为 Specification Test 的写法天然贴近自然语言。
+而 LLM 最擅长的就是在自然语言之间进行翻译。这种转换几乎是无损的，SOTA 模型处理这种翻译几乎不会出错，且确保人类可控的覆盖。相对于事后生成的 test，虽然你没看过 test 代码，但你的信心会高非常多。
+
+[click] 所以在这个部分，开发者的任务就变成了：怎么把 Idea——特别是非技术人员的 Idea——翻译成可以自动化测试的案例。（语音输入，AI 辅助整理自然语言的测试案例 ... ）
+这才是验收环节中人最该做的事情：去验收行为，而不是验收代码。
 -->
 
 ---
