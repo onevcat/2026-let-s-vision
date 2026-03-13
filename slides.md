@@ -1342,7 +1342,7 @@ layout: default
 
 [click] Spec 的形态因任务类型而异。
 
-[click] 举几个例子：
+举几个例子：
 - PR Review：Spec 就是 PR Description，描述变更意图和影响范围。
 - Feature Issue：Spec 是和 Designer 或 Planner 确认好的 Wiki 文档。
 - Bug Fix：Spec 是 Ticket 里 QA 汇报的复现步骤加期望行为。
@@ -1512,6 +1512,35 @@ layout: default
 第二，非技术人员可以直接编写验收标准。
 传统 UI Test 只有开发者能写。评估剧本是自然语言，PM、QA、Designer 都能直接写。
 这打通了"需求方直接定义验收条件"的最后一环——真正的 BDD 落地。
+-->
+
+---
+layout: default
+clicks: 4
+---
+
+# 闭环：Agent to Agent
+
+<div class="mt-1 text-base text-gray-500">{{ $clicks >= 4 ? '每轮独立 Context，完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
+
+<AgentLoopDiagram :step="$clicks" class="-mt-2" />
+
+<!--
+这一页把前面讲的内容串起来，做一个动画演示。
+
+[初始状态] 回顾一下现状——人启动、Agent 执行、人审核。起点和终点都是人。
+
+[click] 看变化：起点从「人启动」变成了「Trigger 启动」——事件、定时、上游触发自动发起任务。
+终点从「人审核」变成了「Agent 自行验收」——测试守门、Agent Review、视觉验证，全自动完成。
+整条链路上全是 Agent 了。
+
+[click] 但光有一条链路还不够。验收可能不通过，需要迭代。
+把这条链路缩小，扩展成三条并排——形成一个验证闭环。
+验收不通过？自动触发下一轮。Agent 自己改、自己跑、自己验，直到通过为止。
+
+关键看左边：人做的事变成了「定规矩」——一次性把 Spec 和验收标准定好，然后交给 Agent 自己去迭代。
+Human 不在 Loop 里了，只在 Loop 开始前定义规则，然后退场。
+这就是 Agent to Agent 的验证闭环。
 -->
 
 ---
