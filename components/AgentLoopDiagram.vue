@@ -71,7 +71,7 @@ const props = defineProps({
     <div class="flex-shrink-0 w-28 rounded-2xl bg-amber-50 border-2 border-amber-300 p-4 shadow-sm flex flex-col items-center text-center">
       <carbon-user class="text-3xl mb-2 text-amber-600" />
       <div class="font-bold text-amber-800 text-sm">定规矩</div>
-      <div class="text-xs text-amber-500 mt-1 leading-relaxed">Spec<br/>验收标准</div>
+      <div class="text-xs text-amber-500 mt-1 leading-relaxed"><span class="font-bold text-amber-700">Spec</span><br/>验收标准</div>
     </div>
 
     <div class="flex flex-col items-center flex-shrink-0">
@@ -176,7 +176,7 @@ const props = defineProps({
     <div class="flex-shrink-0 w-28 rounded-2xl bg-violet-50 border-2 border-violet-300 p-4 shadow-sm flex flex-col items-center text-center transition-all duration-700" :class="step >= 4 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'">
       <carbon-save class="text-3xl mb-2 text-violet-600" />
       <div class="font-bold text-violet-800 text-sm">做总结</div>
-      <div class="text-xs text-violet-500 mt-1 leading-relaxed">提取 Skill<br/>沉淀 Memory</div>
+      <div class="text-xs text-violet-500 mt-1 leading-relaxed"><span class="font-bold text-violet-700">Spark</span><br/>沉淀记忆</div>
     </div>
   </div>
 
