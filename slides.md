@@ -1547,58 +1547,157 @@ Human 不在 Loop 里了，只在 Loop 开始前定义规则，然后退场。
 layout: default
 ---
 
-# 一个实际案例
+# 案例：NavigationStack 假死排障 — Spec 定义
 
-<div class="mt-4">
+<div class="mt-1 text-sm text-gray-500">人的工作：从 Ticket 到可执行的 Spec</div>
 
-<div class="flex items-start gap-6">
-<div class="flex-1">
+<div class="mt-4 grid grid-cols-2 gap-6">
 
-<div class="mb-4 text-sm opacity-70">
-  2~3 层 NavigationStack + 状态刷新 → UI 卡死
+<div class="space-y-3">
+  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
+    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+    <div>
+      <div class="text-sm font-bold text-slate-700">收到 Ticket</div>
+      <div class="text-xs text-slate-500 mt-0.5">QA 报告：iOS 18 下多层页面跳转后 UI 假死，需强杀重启</div>
+    </div>
+  </div>
+  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
+    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+    <div>
+      <div class="text-sm font-bold text-slate-700">喂给 LLM，生成剧本</div>
+      <div class="text-xs text-slate-500 mt-0.5">将 Ticket 描述直接输入大语言模型<br/>LLM 输出结构化排障剧本：复现步骤 + 验收条件</div>
+    </div>
+  </div>
+  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
+    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+    <div>
+      <div class="text-sm font-bold text-slate-700">人审 Spec，确认交付</div>
+      <div class="text-xs text-slate-500 mt-0.5">开发者过一遍：补充已知信息（iOS 26 正常）、修正方向<br/>确认后交给 Agent</div>
+    </div>
+  </div>
+  <div class="mt-2 text-xs text-gray-400 pl-2" v-click>人的工作到此为止 → 接下来交给 Agent Loop</div>
 </div>
 
-<div class="space-y-2">
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">1</div>
-    <div class="text-sm"><strong>现象</strong>：特定层级下 UI 无响应</div>
+<div v-click>
+  <div class="font-bold text-base mb-3">Spec 剧本产出</div>
+  <div class="px-4 py-3 rounded-xl bg-gray-100 border border-gray-200 font-mono text-sm leading-loose">
+    <span class="text-slate-600">0. <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded text-xs font-bold">setup</span> 已登录 App，在首页</span><br/>
+    <span class="text-teal-800">1. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击底栏「设置」Tab</span><br/>
+    <span class="text-purple-800">2. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 进入设置页，顶部显示用户头像</span><br/>
+    <span class="text-teal-800">3. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击「账号管理」进入二级页</span><br/>
+    <span class="text-purple-800">4. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 导航正常推入，标题显示「账号管理」</span><br/>
+    <span class="text-teal-800">5. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击「修改昵称」进入三级页</span><br/>
+    <span class="text-purple-800">6. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 页面正常显示，<strong>UI 可交互、未假死</strong></span>
   </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">2</div>
-    <div class="text-sm"><strong>最小复现</strong>：构建隔离环境复现问题</div>
+  <div class="mt-2 text-xs text-gray-500 pl-3 border-l-2 border-gray-300">
+    人能读、AI 能执行——与前面「评估剧本」格式一致
   </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold">3</div>
-    <div class="text-sm"><strong>Agent 介入</strong>：定位 / 复现 / 验证</div>
-  </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">4</div>
-    <div class="text-sm"><strong>Workaround</strong>：规避策略 + 团队 Memory 记录</div>
-  </div>
-</div>
-
-</div>
-<div class="w-32 flex items-center justify-center">
-  <carbon-mobile class="text-7xl text-gray-300 opacity-60" />
-</div>
 </div>
 
 </div>
 
 <!--
-具体案例：SwiftUI / iOS 18 NavigationStack 假死。
+实际案例第一部分：人做 Spec 定义。
 
-现象：2~3 层 NavigationStack + 状态刷新，可能触发 UI 假死。
-这是一个真实的、我们在生产中遇到的问题。
+这个案例是我们在生产中真实遇到的 SwiftUI 问题。
 
-闭环流程：
-1. 现象：特定层级下 UI 无响应
-2. 最小复现：构建隔离环境，排除其他因素
-3. Agent 介入：帮助定位问题根因，构建复现工程，验证修复
-4. Workaround：规避策略 + 写入团队 memory 记录
+[click] 第一步，收到 Ticket。QA 报告在 iOS 18 下，多层页面跳转后 UI 完全卡住，用户必须强杀 App。
 
-重点不是"AI 修了个 bug"，而是"排障流程被标准化并可复用"。
-产出：最小复现工程、规避策略、团队 memory 记录。
+[click] 第二步，把 Ticket 直接喂给大语言模型。LLM 根据描述输出结构化的排障剧本——复现步骤、可能方向、验收条件。这就是我们前面说的"自然语言到自然语言的翻译"，几乎无损。
+
+[click] 第三步，人过一遍剧本。补充自己知道的上下文——比如"iOS 26 没这个问题"——修正方向，确认后交给 Agent。
+
+[click] 人的工作到此为止。
+
+[click] 右边就是产出的 Spec 剧本。格式和前面讲的评估剧本完全一致——action 和 eval 交替。
+前提是已登录 App；然后一步步导航到三级页面；最后的验收条件就是"UI 可交互、未假死"。
+人能读、AI 能执行，接下来交给 Agent Loop。
+-->
+
+---
+layout: default
+---
+
+# 案例：NavigationStack 假死排障 — Agent Loop
+
+<div class="mt-1 text-sm text-gray-500">Agent 接手 Spec，每次迭代输出作为下一次的输入</div>
+
+<div class="mt-4 relative">
+
+<div class="space-y-2.5 max-w-2xl">
+  <div class="flex items-center gap-3" v-click>
+    <div class="w-20 flex-shrink-0 text-right">
+      <div class="text-xs font-bold text-gray-500">迭代 1</div>
+    </div>
+    <div class="w-2 h-2 rounded-full bg-red-200 flex-shrink-0"></div>
+    <div class="flex-1 p-3 rounded-xl bg-red-50 border border-red-100">
+      <div class="text-sm"><strong class="text-red-700">假设</strong>：ViewModel 创建时机问题</div>
+      <div class="text-xs text-red-600 mt-1">尝试在设置 NavigationPath 前创建 ViewModel → <strong>仍假死</strong>，排除此方向</div>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3" v-click>
+    <div class="w-20 flex-shrink-0 text-right">
+      <div class="text-xs font-bold text-gray-500">迭代 2</div>
+    </div>
+    <div class="w-2 h-2 rounded-full bg-orange-200 flex-shrink-0"></div>
+    <div class="flex-1 p-3 rounded-xl bg-orange-50 border border-orange-100">
+      <div class="text-sm"><strong class="text-orange-700">假设</strong>：NavigationPath 状态冲突</div>
+      <div class="text-xs text-orange-600 mt-1">隔离 path 管理为独立 ObservableObject → <strong>部分改善</strong>，方向接近</div>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3" v-click>
+    <div class="w-20 flex-shrink-0 text-right">
+      <div class="text-xs font-bold text-gray-500">迭代 3</div>
+    </div>
+    <div class="w-2 h-2 rounded-full bg-amber-200 flex-shrink-0"></div>
+    <div class="flex-1 p-3 rounded-xl bg-amber-50 border border-amber-100">
+      <div class="text-sm"><strong class="text-amber-700">缩小范围</strong>：层级 ≥ 2 + push 时同步触发 State 更新</div>
+      <div class="text-xs text-amber-600 mt-1">构建最小复现工程，3 个文件 → <strong>稳定复现</strong>，确认触发条件</div>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3" v-click>
+    <div class="w-20 flex-shrink-0 text-right">
+      <div class="text-xs font-bold text-teal-500">迭代 4</div>
+    </div>
+    <div class="w-2 h-2 rounded-full bg-teal-200 flex-shrink-0"></div>
+    <div class="flex-1 p-3 rounded-xl bg-teal-50 border border-teal-100">
+      <div class="text-sm"><strong class="text-teal-700">修复</strong>：Model 链路断裂导致状态丢失不停重建</div>
+      <div class="text-xs text-teal-600 mt-1">修正数据模型传递后假死消失 → <strong>自动验收通过</strong> ✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 flex items-center gap-4" v-click>
+  <div class="flex-1 h-px bg-gray-200"></div>
+  <div class="flex items-center gap-3 text-xs">
+    <div class="px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 font-bold text-teal-600">Workaround 提交</div>
+    <div class="px-3 py-1.5 rounded-full bg-violet-50 border border-violet-100 font-bold text-violet-600">写入团队 Memory</div>
+    <div class="px-3 py-1.5 rounded-full bg-amber-50 border border-amber-100 font-bold text-amber-600">最小复现工程归档</div>
+  </div>
+  <div class="flex-1 h-px bg-gray-200"></div>
+</div>
+
+</div>
+
+<!--
+案例第二部分：Agent Loop 接手执行。
+
+Agent 拿到 Spec 后，开始自主排障。过程很像开发者用二分法定位问题——每轮缩小范围。
+
+[click] 迭代 1：Agent 假设是 ViewModel 创建时机问题——在设置 NavigationPath 前还是之后创建 ViewModel 会有区别。尝试提前创建，结果仍然假死，排除这个方向。
+
+[click] 迭代 2：假设 NavigationPath 状态冲突，把 path 管理隔离成独立 ObservableObject。部分改善，说明方向接近但还没到根因。
+
+[click] 迭代 3：进一步缩小范围——层级大于等于 2、push 时同步触发 State 更新。Agent 构建了一个只有 3 个文件的最小复现工程，稳定复现了问题。
+
+[click] 迭代 4：定位到根因——ViewModel 结构不统一，导致导航时状态丢失。统一数据模型结构后假死消失，验收通过。
+
+[click] 最终产出三样东西：Workaround 代码提交、写入团队 Memory 让所有人知道这个坑、最小复现工程归档方便后续跟进 Apple 修复。
+
+整个过程人没有再介入——Agent 自己假设、验证、缩小范围、修复，就像一个有经验的开发者做二分排障。
 -->
 
 ---
