@@ -1521,7 +1521,7 @@ clicks: 4
 
 # 闭环：Agent to Agent
 
-<div class="mt-1 text-base text-gray-500">{{ $clicks >= 4 ? '每轮独立 Context，完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
+<div class="mt-1 text-base text-gray-500">{{ $clicks >= 4 ? '完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
 
 <AgentLoopDiagram :step="$clicks" class="-mt-2" />
 
@@ -1541,6 +1541,64 @@ clicks: 4
 关键看左边：人做的事变成了「定规矩」——一次性把 Spec 和验收标准定好，然后交给 Agent 自己去迭代。
 Human 不在 Loop 里了，只在 Loop 开始前定义规则，然后退场。
 这就是 Agent to Agent 的验证闭环。
+-->
+
+---
+layout: default
+---
+
+# 一个实际案例
+
+<div class="mt-4">
+
+<div class="flex items-start gap-6">
+<div class="flex-1">
+
+<div class="mb-4 text-sm opacity-70">
+  2~3 层 NavigationStack + 状态刷新 → UI 卡死
+</div>
+
+<div class="space-y-2">
+  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
+    <div class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">1</div>
+    <div class="text-sm"><strong>现象</strong>：特定层级下 UI 无响应</div>
+  </div>
+  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
+    <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">2</div>
+    <div class="text-sm"><strong>最小复现</strong>：构建隔离环境复现问题</div>
+  </div>
+  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
+    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold">3</div>
+    <div class="text-sm"><strong>Agent 介入</strong>：定位 / 复现 / 验证</div>
+  </div>
+  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
+    <div class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">4</div>
+    <div class="text-sm"><strong>Workaround</strong>：规避策略 + 团队 Memory 记录</div>
+  </div>
+</div>
+
+</div>
+<div class="w-32 flex items-center justify-center">
+  <carbon-mobile class="text-7xl text-gray-300 opacity-60" />
+</div>
+</div>
+
+</div>
+
+<!--
+具体案例：SwiftUI / iOS 18 NavigationStack 假死。
+
+现象：2~3 层 NavigationStack + 状态刷新，可能触发 UI 假死。
+这是一个真实的、我们在生产中遇到的问题。
+
+闭环流程：
+1. 现象：特定层级下 UI 无响应
+2. 最小复现：构建隔离环境，排除其他因素
+3. Agent 介入：帮助定位问题根因，构建复现工程，验证修复
+4. Workaround：规避策略 + 写入团队 memory 记录
+
+重点不是"AI 修了个 bug"，而是"排障流程被标准化并可复用"。
+产出：最小复现工程、规避策略、团队 memory 记录。
 -->
 
 ---
@@ -1590,224 +1648,7 @@ AI 变强后，不是"少做工程"，而是"重排工程优先级"。
 layout: default
 ---
 
-# 战略落点
-
-<div class="mt-8 grid grid-cols-2 gap-5">
-
-<KeyPoint title="平台能力" v-click>
-  <template #icon><carbon-cloud-services class="text-2xl" /></template>
-  构建 agent 可调用的服务层
-</KeyPoint>
-
-<KeyPoint title="权限审计" v-click>
-  <template #icon><carbon-locked class="text-2xl" /></template>
-  Agent 代理人类执行时的权限边界与审计
-</KeyPoint>
-
-<KeyPoint title="可观测性" v-click>
-  <template #icon><carbon-dashboard class="text-2xl" /></template>
-  Agent 行为的监控、日志与回溯
-</KeyPoint>
-
-<KeyPoint title="流程自动化" v-click>
-  <template #icon><carbon-flow-modeler class="text-2xl" /></template>
-  从手动触发到事件驱动的全链路
-</KeyPoint>
-
-</div>
-
-<div class="mt-6 text-center text-sm opacity-60" v-click>
-  这些将成为企业级 AI 工程化的竞争关键
-</div>
-
-<!--
-战略落点。
-
-如果约束判断成立，那企业需要在四个方面构建能力：
-1. 平台能力：构建 agent 可调用的服务层，而不是只给人用的 UI
-2. 权限审计：Agent 代理人类执行时的权限边界与审计链路
-3. 可观测性：Agent 行为的监控、日志与回溯能力
-4. 流程自动化：从手动触发到事件驱动的全链路自动化
-
-这些不是"未来的事"，而是现在就需要开始投入的基础设施。
-战略落点明确后，来看实际案例。
--->
----
-layout: new-section
----
-
-# 案例
-
-不是"AI 很神"，而是"流程如何标准化和沉淀"
-
-<!--
-过渡页。三组道术讲完，不靠口号，直接看两个案例。
-案例不该只讲"AI 很神"，而应讲"流程如何被标准化和沉淀"。
--->
-
----
-layout: default
----
-
-# 大规模代码库中的 Subagent 协作
-
-<div class="mt-4 text-sm opacity-70 mb-6">多语言、多模块、超大仓库 —— 单 agent 很难稳定覆盖</div>
-
-<div class="flex items-center justify-center gap-3 mt-4" v-click>
-  <div class="p-4 rounded-xl bg-teal-50 border border-teal-200 text-center w-36">
-    <carbon-search class="text-2xl text-teal-600 mb-2" />
-    <div class="text-sm font-bold">检索 Agent</div>
-    <div class="text-xs opacity-60">定位相关代码</div>
-  </div>
-  <carbon-arrow-right class="text-xl text-gray-400" />
-  <div class="p-4 rounded-xl bg-green-50 border border-green-200 text-center w-36">
-    <carbon-edit class="text-2xl text-green-600 mb-2" />
-    <div class="text-sm font-bold">改动 Agent</div>
-    <div class="text-xs opacity-60">执行代码修改</div>
-  </div>
-  <carbon-arrow-right class="text-xl text-gray-400" />
-  <div class="p-4 rounded-xl bg-purple-50 border border-purple-200 text-center w-36">
-    <carbon-checkmark-filled class="text-2xl text-purple-600 mb-2" />
-    <div class="text-sm font-bold">验证 Agent</div>
-    <div class="text-xs opacity-60">测试与回归</div>
-  </div>
-</div>
-
-<div class="flex items-center justify-center mt-4" v-click>
-  <div class="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-center w-52">
-    <carbon-center-to-fit class="text-2xl text-indigo-600 mb-1" />
-    <div class="text-sm font-bold">主 Agent 汇总决策</div>
-  </div>
-</div>
-
-<!--
-高层案例 - 场景与方案。
-
-场景：多语言、多模块、超大仓库，单 agent 很难稳定覆盖。
-方案：按模块/职责拆分 subagent。
-
-分工：
-- 检索 Agent：定位相关代码和上下文
-- 改动 Agent：执行具体的代码修改
-- 验证 Agent：运行测试、做回归检查
-- 主 Agent：汇总各 subagent 的结果，做最终决策
-
-价值：并行度提升、责任边界清晰、协作模板可复制。
-这是"注意力稀缺 + context 有限"下的工程化解法。
--->
-
----
-layout: default
----
-
-# Subagent 协作价值
-
-<div class="mt-6 grid grid-cols-3 gap-5">
-
-<div class="p-5 rounded-xl bg-teal-50 border border-teal-100 text-center" v-click>
-  <carbon-increase-level class="text-3xl text-teal-600 mb-3" />
-  <div class="font-bold text-teal-800 mb-2">并行度提升</div>
-  <div class="text-xs opacity-60 leading-relaxed">
-    多个 agent 并行工作，突破单 agent 的上下文瓶颈
-  </div>
-</div>
-
-<div class="p-5 rounded-xl bg-green-50 border border-green-100 text-center" v-click>
-  <carbon-security class="text-3xl text-green-600 mb-3" />
-  <div class="font-bold text-green-800 mb-2">责任边界清晰</div>
-  <div class="text-xs opacity-60 leading-relaxed">
-    每个 agent 职责明确，出错可定位
-  </div>
-</div>
-
-<div class="p-5 rounded-xl bg-purple-50 border border-purple-100 text-center" v-click>
-  <carbon-copy class="text-3xl text-purple-600 mb-3" />
-  <div class="font-bold text-purple-800 mb-2">协作模板可复制</div>
-  <div class="text-xs opacity-60 leading-relaxed">
-    一次编排模式可在不同场景复用
-  </div>
-</div>
-
-</div>
-
-<div class="mt-6 text-center text-sm opacity-60" v-click>
-  连接道术：这是"注意力稀缺 + context 有限"下的工程化解法
-</div>
-
-<!--
-高层案例 - 方案价值。
-
-1. 并行度提升：多个 agent 并行工作，突破单 agent 的上下文瓶颈
-2. 责任边界清晰：每个 agent 职责明确，出错可以快速定位到哪个环节
-3. 协作模板可复制：一次成功的编排模式可以在不同场景复用
-
-这不只是"用了多个 agent"——
-而是把前面讲的约束（注意力稀缺 + context 有限）转化为工程方案。
--->
-
----
-layout: default
----
-
-# iOS 18 NavigationStack 假死排障
-
-<div class="mt-4">
-
-<div class="flex items-start gap-6">
-<div class="flex-1">
-
-<div class="mb-4 text-sm opacity-70">
-  2~3 层 NavigationStack + 状态刷新 → UI 假死
-</div>
-
-<div class="space-y-2">
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">1</div>
-    <div class="text-sm"><strong>现象</strong>：特定层级下 UI 无响应</div>
-  </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">2</div>
-    <div class="text-sm"><strong>最小复现</strong>：构建隔离环境复现问题</div>
-  </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold">3</div>
-    <div class="text-sm"><strong>Agent 介入</strong>：定位 / 复现 / 验证</div>
-  </div>
-  <div class="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border" v-click>
-    <div class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">4</div>
-    <div class="text-sm"><strong>Workaround</strong>：规避策略 + 团队 Memory 记录</div>
-  </div>
-</div>
-
-</div>
-<div class="w-32 flex items-center justify-center">
-  <carbon-mobile class="text-7xl text-gray-300 opacity-60" />
-</div>
-</div>
-
-</div>
-
-<!--
-具体案例：SwiftUI / iOS 18 NavigationStack 假死。
-
-现象：2~3 层 NavigationStack + 状态刷新，可能触发 UI 假死。
-这是一个真实的、我们在生产中遇到的问题。
-
-闭环流程：
-1. 现象：特定层级下 UI 无响应
-2. 最小复现：构建隔离环境，排除其他因素
-3. Agent 介入：帮助定位问题根因，构建复现工程，验证修复
-4. Workaround：规避策略 + 写入团队 memory 记录
-
-重点不是"AI 修了个 bug"，而是"排障流程被标准化并可复用"。
-产出：最小复现工程、规避策略、团队 memory 记录。
--->
-
----
-layout: default
----
-
-# 案例总结：流程 → 资产 → 模板
+# 早期建设的建议
 
 <div class="mt-8 flex items-center justify-center gap-6">
 
@@ -1855,64 +1696,11 @@ layout: default
 -->
 
 ---
-layout: default
----
-
-# 工程师的新手艺
-
-<div class="mt-8 grid gap-4 max-w-2xl mx-auto">
-
-<div v-click class="flex items-center gap-4 p-4 rounded-xl bg-teal-50 border border-teal-100">
-<carbon-data-definition class="text-2xl text-teal-600 flex-shrink-0" />
-<div>
-<div class="font-bold text-teal-800">把问题讲清楚</div>
-<div class="text-xs opacity-60">定义、约束、验收</div>
-</div>
-</div>
-
-<div v-click class="flex items-center gap-4 p-4 rounded-xl bg-indigo-50 border border-indigo-100">
-<carbon-build-tool class="text-2xl text-indigo-600 flex-shrink-0" />
-<div>
-<div class="font-bold text-indigo-800">把系统搭到 agent 能发挥</div>
-<div class="text-xs opacity-60">上下文、可观测、自动化</div>
-</div>
-</div>
-
-<div v-click class="flex items-center gap-4 p-4 rounded-xl bg-purple-50 border border-purple-100">
-<carbon-data-enrichment class="text-2xl text-purple-600 flex-shrink-0" />
-<div>
-<div class="font-bold text-purple-800">把成功路径变成团队资产</div>
-<div class="text-xs opacity-60">Memory + Skill + 模板</div>
-</div>
-</div>
-
-</div>
-
-<div v-click class="mt-6 text-center text-sm opacity-60">
-明天最小落地：<strong>1 个模板 + 1 个验证循环</strong>
-</div>
-
-<!--
-收束。三句话：
-
-1. 把问题讲清楚（定义、约束、验收）
-2. 把系统搭到 agent 能发挥（上下文、可观测、自动化）
-3. 把成功路径变成团队资产（memory + skill + 模板）
-
-收束补句：
-- 软件开发与产品设计将持续从 to-human 走向 to-agent
-- Memory/skill 的构建本质是"渐进式披露（progressive disclosure）"实践
-
-行动号召：明天最小落地——1 个模板 + 1 个验证循环。
-不需要一步到位，从最小的闭环开始。
--->
-
----
 layout: end
 ---
 
 <div class="text-center">
-  <div class="text-2xl font-bold mb-6">Thank You</div>
+  <div class="text-2xl font-bold mb-6">Thank You!</div>
   <div class="text-base opacity-70 mb-2">Wei Wang</div>
   <div class="flex items-center justify-center gap-4 text-sm opacity-50">
     <span><carbon-logo-x class="inline mr-1" />@onevcat</span>
