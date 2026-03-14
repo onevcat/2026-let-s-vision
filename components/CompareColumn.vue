@@ -29,13 +29,15 @@ defineProps({
 }
 
 .compare-col.fading {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  border: 1px solid #fecaca;
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  border: 1px solid #f9a8a8;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.08);
 }
 
 .compare-col.rising {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border: 1px solid #bbf7d0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
+  border: 1px solid #86efac;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.08);
 }
 
 .compare-col.neutral {
@@ -63,8 +65,8 @@ defineProps({
 }
 
 .col-items {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #334155;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #1e293b;
 }
 </style>

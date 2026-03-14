@@ -918,7 +918,7 @@ layout: default
 
 <div v-click class="pl-5 border-l-3 border-teal-300">
   <div class="flex items-center gap-2 mb-1">
-    <carbon-explore class="text-lg text-teal-600" />
+    <carbon-explore class="text-xl text-teal-600" />
     <span class="font-bold text-lg">没有公认的最佳实践——让高手先跑</span>
   </div>
   <div class="text-base opacity-60 leading-relaxed">业界仍在摸索，过早统一标准反而限制探索空间。在安全合规的底线之上，放手让有好奇心的核心开发者自由编排。</div>
@@ -926,7 +926,7 @@ layout: default
 
 <div v-click class="pl-5 border-l-3 border-teal-300">
   <div class="flex items-center gap-2 mb-1">
-    <carbon-compare class="text-lg text-teal-600" />
+    <carbon-compare class="text-xl text-teal-600" />
     <span class="font-bold text-lg">鼓励多 Harness 并存与比较</span>
   </div>
   <div class="text-base opacity-60 leading-relaxed">Claude Code、Codex、Pi、OpenCode……让高手充分体验每个工具的长短，抽选甚至构建最适合团队的 Harness。</div>
@@ -934,7 +934,7 @@ layout: default
 
 <div v-click class="pl-5 border-l-3 border-teal-500 bg-teal-50/50 py-4 pr-4 rounded-r-lg">
   <div class="flex items-center gap-2 mb-1">
-    <carbon-build-tool class="text-lg text-teal-600" />
+    <carbon-build-tool class="text-xl text-teal-600" />
     <span class="font-bold text-lg">自定义 Harness 已不再遥不可及</span>
   </div>
   <div class="text-base opacity-60 leading-relaxed">以前需要大量开发且难以维护；现在在 AI Agent 的帮助下，团队级定制开发已完全可行。<br/><b>Domain 知识 × Agent 实践 = 团队的最大贡献。</b></div>
@@ -1450,15 +1450,15 @@ layout: default
 <div v-click class="px-5 py-4 rounded-xl bg-teal-50 border border-teal-200 space-y-2.5">
   <div class="flex items-center gap-4">
     <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">1</div>
-    <div class="font-bold text-base">Simulator 自动操作</div>
+    <div class="font-bold text-lg">Simulator 自动操作</div>
   </div>
   <div class="flex items-center gap-4">
     <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">2</div>
-    <div class="font-bold text-base">自动截图或视频录制</div>
+    <div class="font-bold text-lg">自动截图或视频录制</div>
   </div>
   <div class="flex items-center gap-4">
     <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">3</div>
-    <div class="font-bold text-base">AI 视觉比对，逐步验收</div>
+    <div class="font-bold text-lg">AI 视觉比对，逐步验收</div>
   </div>
 </div>
 
@@ -1707,17 +1707,15 @@ clicks: 2
 
 # 还有什么在变？
 
-<div class="text-sm text-gray-400 -mt-2 mb-2">不是少做工程，而是重排优先级</div>
-
 ::left::
 
 <CompareColumn title="正在弱化" variant="fading" :class="[$clicks >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4', 'mr-3 transition-all duration-500']">
   <template #icon><carbon-arrow-down class="text-red-500" /></template>
 
-  - **DRY** 的边际价值下降<br/><span class="text-xs opacity-60">局部重复换取可理解性有时更优</span>
-  - **语言/框架专精**不再是护城河<br/><span class="text-xs opacity-60">AI 拉平了技术栈学习曲线，"我是 X 专家"的溢价在缩水</span>
-  - 传统 **Code Review** 形态改变<br/><span class="text-xs opacity-60">从审查"怎么写的"转向审查"要的是什么、结果对不对"</span>
-  - **调试风格**正在转变<br/><span class="text-xs opacity-60">强大的分析能力，简便的 log 追加能力；Debugger 被"弃用"</span>
+  - **DRY** 的边际价值下降<br/><span class="text-sm text-slate-500">局部重复换取可理解性有时更优</span>
+  - **语言/框架专精**不再是护城河<br/><span class="text-sm text-slate-500">AI 拉平了技术栈学习曲线，"我是 X 专家"的溢价在缩水</span>
+  - 传统 **Code Review** 形态改变<br/><span class="text-sm text-slate-500">从审查"怎么写的"转向审查"要的是什么、结果对不对"</span>
+  - **调试风格**正在转变<br/><span class="text-sm text-slate-500">强大的分析能力，简便的 log 追加能力；Debugger 被"弃用"</span>
 
 </CompareColumn>
 
@@ -1726,10 +1724,10 @@ clicks: 2
 <CompareColumn title="正在增强" variant="rising" :class="[$clicks >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4', 'ml-3 transition-all duration-500']">
   <template #icon><carbon-arrow-up class="text-green-500" /></template>
 
-  - **历史知识共享透明**<br/><span class="text-xs opacity-60">几乎无穷的检索能力让团队或个人知识库的作用大幅提升</span>
-  - **架构决策的杠杆**被放大<br/><span class="text-xs opacity-60">模块边界清晰才能让多个 Agent 并行，设计选择影响倍增</span>
-  - **自主改善**成为可能<br/><span class="text-xs opacity-60">完备测试下的定时小任务、自动发 PR，代码库实现自我进化</span>
-  - **为 Agent 而写**的时代<br/><span class="text-xs opacity-60">API、注释、框架、乃至产品：第一消费者正在从人变成 Agent</span>
+  - **历史知识共享透明**<br/><span class="text-sm text-slate-500">几乎无穷的检索能力让团队或个人知识库的作用大幅提升</span>
+  - **架构决策的杠杆**被放大<br/><span class="text-sm text-slate-500">模块边界清晰才能让多个 Agent 并行，设计选择影响倍增</span>
+  - **自主改善**成为可能<br/><span class="text-sm text-slate-500">完备测试下的定时小任务、自动发 PR，代码库实现自我进化</span>
+  - **为 Agent 而写**的时代<br/><span class="text-sm text-slate-500">API、注释、框架、乃至产品：第一消费者正在从人变成 Agent</span>
 
 </CompareColumn>
 
@@ -1748,49 +1746,138 @@ layout: default
 
 # 早期建设的建议
 
-<div class="mt-8 flex items-center justify-center gap-6">
+<div class="text-sm text-gray-500 -mt-2 mb-4">针对刚起步使用 AI 的个人和团队</div>
 
-<div class="text-center p-6 rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-200 w-48" v-click>
-  <carbon-flow class="text-3xl text-gray-600 mb-3" />
-  <div class="font-bold">标准化流程</div>
-  <div class="text-xs opacity-60 mt-2">现象 → 复现 → 定位 → 修复 → 沉淀</div>
+<div class="grid grid-cols-2 gap-5 mt-2">
+
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-certificate class="text-xl text-teal-600" /></div>
+    <div class="font-bold text-lg">挑选靠谱的模型商</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 优先选有完善 API + 稳定 SLA 的供应商</div>
+    <div>· 关注上下文窗口和工具调用能力，而非只看跑分</div>
+    <div>· 企业级先确认 data residency 和隐私政策</div>
+  </div>
 </div>
 
-<carbon-arrow-right class="text-2xl text-gray-400" v-click />
-
-<div class="text-center p-6 rounded-2xl bg-gradient-to-b from-teal-50 to-teal-100 border border-teal-200 w-48" v-click>
-  <carbon-save class="text-3xl text-teal-600 mb-3" />
-  <div class="font-bold text-teal-800">资产沉淀</div>
-  <div class="text-xs opacity-60 mt-2">复现工程 / 规避策略 / 团队记录</div>
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-flash class="text-xl text-teal-600" /></div>
+    <div class="font-bold text-lg">大量消耗 Token 做实践</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 给自己设"token 预算"——初期探索回报远超投入</div>
+    <div>· 同一任务用不同模型做 A/B 对比，建立直觉</div>
+    <div>· 刻意试探失败边界，摸清能力天花板</div>
+  </div>
 </div>
 
-<carbon-arrow-right class="text-2xl text-gray-400" v-click />
-
-<div class="text-center p-6 rounded-2xl bg-gradient-to-b from-green-50 to-green-100 border border-green-200 w-48" v-click>
-  <carbon-copy class="text-3xl text-green-600 mb-3" />
-  <div class="font-bold text-green-800">可复用模板</div>
-  <div class="text-xs opacity-60 mt-2">类似问题直接套用</div>
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-migrate class="text-xl text-teal-600" /></div>
+    <div class="font-bold text-lg">将现有工作流迁移到 AI</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 从最痛的重复性工作入手：审查摘要、i18n、changelog</div>
+    <div>· 先 AI 辅助，再 AI 主导——不要一步到全自动</div>
+    <div>· 建立"之前/之后"效果对照，用数据说服团队</div>
+  </div>
 </div>
 
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-idea class="text-xl text-teal-600" /></div>
+    <div class="font-bold text-lg">不要过度纠结工具选型</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 工具在快速迭代，今天的最优解三个月后可能变</div>
+    <div>· 重要的是建立"与 AI 协作"的思维模式</div>
+    <div>· 把精力花在理解约束，而非追逐功能</div>
+  </div>
 </div>
 
-<div class="mt-8 text-center text-sm opacity-60" v-click>
-  案例的价值不在于"AI 帮你修了 bug"，而在于"流程可复制"
 </div>
 
 <!--
-案例总结：标准化流程 → 资产沉淀 → 可复用模板。
+早期建设建议，面向刚开始接触 AI 协作的团队和个人。
 
-两个案例的共同点：
-- 都不是在展示"AI 很厉害"
-- 而是在展示"流程如何被标准化和沉淀"
+四条建议：
+1. 挑靠谱模型商——API 稳定、上下文够大、合规。
+2. 大量消耗 token——设预算不设限制，A/B 对比建立直觉，刻意试边界。
+3. 工作流迁移——从重复性工作入手，先辅助再主导，用数据证明效果。
+4. 不纠结工具选型——工具会变，思维模式和对约束的理解才是核心。
+-->
 
-一次成功的排障/协作经验，变成了：
-- 可复用的标准化流程
-- 沉淀下来的资产（代码/文档/记录）
-- 下次遇到类似问题可以直接套用的模板
+---
+layout: default
+---
 
-案例目的不是炫技，而是展示"流程可复制"。
+# 中期建设的建议
+
+<div class="text-sm text-gray-500 -mt-2 mb-4">针对已有实践经验、希望进一步提升的团队</div>
+
+<div class="grid grid-cols-2 gap-5 mt-2">
+
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-meter class="text-xl text-violet-600" /></div>
+    <div class="font-bold text-lg">建立团队 Harness 评测体系</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 基于 domain 知识自建 harness，门槛已很低</div>
+    <div>· 定期 benchmark，对比不同配置/模型的产出</div>
+    <div>· 评测反馈为配置优化——"评测 → 调优"闭环</div>
+  </div>
+</div>
+
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-save class="text-xl text-violet-600" /></div>
+    <div class="font-bold text-lg">团队经验沉淀</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 高手的 prompt/workflow 提炼为共享 Spec 模板和配置文件</div>
+    <div>· 建立 AI 协作案例库——成功和失败都记录</div>
+    <div>· 定期团队分享——缩小前面提到的"AI 使用格差"</div>
+  </div>
+</div>
+
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-task-approved class="text-xl text-violet-600" /></div>
+    <div class="font-bold text-lg">开始构建验收自动化</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 从最关键的业务流程开始写评估剧本</div>
+    <div>· 建立"变更 → 验证 → 回归"最小闭环</div>
+    <div>· 逐步扩大 Agent 自主验收范围，为无人值守做准备</div>
+  </div>
+</div>
+
+<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-bot class="text-xl text-violet-600" /></div>
+    <div class="font-bold text-lg">让基础设施变得 Agent-friendly</div>
+  </div>
+  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
+    <div>· 文档和架构记录——从"给人看"到"Agent 能消费"</div>
+    <div>· 将知识结构化为可注入的 context 源</div>
+    <div>· 内部工具提供 CLI/API，让 Agent 可直接调用</div>
+  </div>
+</div>
+
+</div>
+
+<!--
+中期建设建议，面向已有实践、希望系统化提升的团队。
+
+四条建议：
+1. 建立 harness 评测——基于 domain 知识自建，定期 benchmark，评测-调优闭环。
+2. 经验沉淀——高手 workflow 共享化、案例库建设、定期分享缩小格差。
+3. 验收自动化——从核心路径开始写 eval 脚本，逐步扩大 Agent 自主验收。
+4. Agent-friendly 基础设施——文档/知识结构化、内部工具 CLI/API 化。
 -->
 
 ---
