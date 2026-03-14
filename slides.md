@@ -252,13 +252,13 @@ layout: default
 # PR 趋势 <carbon-chart-line class="inline text-slate-400" />
 
 <div class="mt-2 grid grid-rows-2 gap-3">
-  <div class="flex items-center gap-4">
-    <img src="/1_weekly_pr_count.png" class="w-3/5 rounded-lg shadow-sm" />
-    <div class="text-sm text-slate-400"><strong class="text-slate-600">粒度在变大</strong> — 总量稳定，单 PR 改动量增加</div>
+  <div class="flex items-center gap-6">
+    <img src="/1_weekly_pr_count.png" class="w-1/2 rounded-lg shadow-sm" />
+    <div class="text-base text-slate-400"><strong class="text-lg text-slate-600">粒度在变大</strong><br/>总量稳定，单 PR 改动量增加</div>
   </div>
-  <div class="flex items-center gap-4">
-    <img src="/2_monthly_merge_time.png" class="w-3/5 rounded-lg shadow-sm" />
-    <div class="text-sm text-slate-400"><strong class="text-slate-600">Review 效率倍增</strong> — 均值 51h → 20h</div>
+  <div class="flex items-center gap-6">
+    <img src="/2_monthly_merge_time.png" class="w-1/2 rounded-lg shadow-sm" />
+    <div class="text-base text-slate-400"><strong class="text-lg text-slate-600">Review 效率倍增</strong><br/>均值 51h → 20h</div>
   </div>
 </div>
 
