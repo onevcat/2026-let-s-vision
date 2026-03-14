@@ -1394,35 +1394,38 @@ clicks: 4
 layout: default
 ---
 
-# 案例：NavigationStack 假死排障 — Spec 定义
+# NavigationStack 假死排障
 
-<div class="mt-1 text-sm text-gray-500">人的工作：从 Ticket 到可执行的 Spec</div>
+<div class="mt-1 flex items-center gap-3">
+  <span class="text-xs font-bold tracking-[0.2em] text-slate-500 bg-slate-100 px-2.5 py-1 rounded uppercase">Case Study</span>
+  <span class="text-sm text-slate-500">Spec 定义 — 人的工作：从 Ticket 到可执行的 Spec</span>
+</div>
 
 <div class="mt-4 grid grid-cols-2 gap-6">
 
-<div class="space-y-3">
-  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
-    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+<div class="space-y-4">
+  <div class="flex items-start gap-3" v-click>
+    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
     <div>
       <div class="text-sm font-bold text-slate-700">收到 Ticket</div>
       <div class="text-xs text-slate-500 mt-0.5">QA 报告：iOS 18 下多层页面跳转后 UI 假死，需强杀重启</div>
     </div>
   </div>
-  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
-    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+  <div class="flex items-start gap-3" v-click>
+    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
     <div>
       <div class="text-sm font-bold text-slate-700">喂给 LLM，生成剧本</div>
-      <div class="text-xs text-slate-500 mt-0.5">将 Ticket 描述直接输入大语言模型<br/>LLM 输出结构化排障剧本：复现步骤 + 验收条件</div>
+      <div class="text-xs text-slate-500 mt-0.5">Ticket → LLM → 结构化排障剧本（复现步骤 + 验收条件）</div>
     </div>
   </div>
-  <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200" v-click>
-    <div class="w-7 h-7 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+  <div class="flex items-start gap-3" v-click>
+    <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
     <div>
       <div class="text-sm font-bold text-slate-700">人审 Spec，确认交付</div>
-      <div class="text-xs text-slate-500 mt-0.5">开发者过一遍：补充已知信息（iOS 26 正常）、修正方向<br/>确认后交给 Agent</div>
+      <div class="text-xs text-slate-500 mt-0.5">补充已知信息（iOS 26 正常）、修正方向 → 交给 Agent</div>
     </div>
   </div>
-  <div class="mt-2 text-xs text-gray-400 pl-2" v-click>人的工作到此为止 → 接下来交给 Agent Loop</div>
+  <div class="text-xs text-slate-400 mt-1 pl-9" v-click>人的工作到此为止 → 接下来交给 Agent Loop</div>
 </div>
 
 <div v-click>
@@ -1456,18 +1459,24 @@ layout: default
 layout: default
 ---
 
-# 案例：NavigationStack 假死排障 — Agent Loop
+# NavigationStack 假死排障
 
-<div class="mt-1 text-sm text-gray-500">Agent 接手 Spec，每次迭代输出作为下一次的输入</div>
+<div class="mt-1 flex items-center gap-3">
+  <span class="text-xs font-bold tracking-[0.2em] text-slate-500 bg-slate-100 px-2.5 py-1 rounded uppercase">Case Study</span>
+  <span class="text-sm text-slate-500">Agent Loop — Agent 接手 Spec，逐步缩小范围</span>
+</div>
 
 <div class="mt-4 relative">
 
-<div class="space-y-2.5 max-w-2xl">
+<!-- Vertical timeline line -->
+<div class="absolute left-[5.375rem] top-3 bottom-20 w-0.5 bg-slate-100"></div>
+
+<div class="space-y-2.5">
   <div class="flex items-center gap-3" v-click>
     <div class="w-20 flex-shrink-0 text-right">
-      <div class="text-xs font-bold text-gray-500">迭代 1</div>
+      <div class="text-xs font-bold text-slate-400">迭代 1</div>
     </div>
-    <div class="w-2 h-2 rounded-full bg-red-200 flex-shrink-0"></div>
+    <div class="w-3 h-3 rounded-full bg-red-300 flex-shrink-0 z-10"></div>
     <div class="flex-1 p-3 rounded-xl bg-red-50 border border-red-100">
       <div class="text-sm"><strong class="text-red-700">假设</strong>：ViewModel 创建时机问题</div>
       <div class="text-xs text-red-600 mt-1">尝试在设置 NavigationPath 前创建 ViewModel → <strong>仍假死</strong>，排除此方向</div>
@@ -1476,9 +1485,9 @@ layout: default
 
   <div class="flex items-center gap-3" v-click>
     <div class="w-20 flex-shrink-0 text-right">
-      <div class="text-xs font-bold text-gray-500">迭代 2</div>
+      <div class="text-xs font-bold text-slate-400">迭代 2</div>
     </div>
-    <div class="w-2 h-2 rounded-full bg-orange-200 flex-shrink-0"></div>
+    <div class="w-3 h-3 rounded-full bg-orange-300 flex-shrink-0 z-10"></div>
     <div class="flex-1 p-3 rounded-xl bg-orange-50 border border-orange-100">
       <div class="text-sm"><strong class="text-orange-700">假设</strong>：NavigationPath 状态冲突</div>
       <div class="text-xs text-orange-600 mt-1">隔离 path 管理为独立 ObservableObject → <strong>部分改善</strong>，方向接近</div>
@@ -1487,9 +1496,9 @@ layout: default
 
   <div class="flex items-center gap-3" v-click>
     <div class="w-20 flex-shrink-0 text-right">
-      <div class="text-xs font-bold text-gray-500">迭代 3</div>
+      <div class="text-xs font-bold text-slate-400">迭代 3</div>
     </div>
-    <div class="w-2 h-2 rounded-full bg-amber-200 flex-shrink-0"></div>
+    <div class="w-3 h-3 rounded-full bg-amber-300 flex-shrink-0 z-10"></div>
     <div class="flex-1 p-3 rounded-xl bg-amber-50 border border-amber-100">
       <div class="text-sm"><strong class="text-amber-700">缩小范围</strong>：层级 ≥ 2 + push 时同步触发 State 更新</div>
       <div class="text-xs text-amber-600 mt-1">构建最小复现工程，3 个文件 → <strong>稳定复现</strong>，确认触发条件</div>
@@ -1500,7 +1509,7 @@ layout: default
     <div class="w-20 flex-shrink-0 text-right">
       <div class="text-xs font-bold text-teal-500">迭代 4</div>
     </div>
-    <div class="w-2 h-2 rounded-full bg-teal-200 flex-shrink-0"></div>
+    <div class="w-3 h-3 rounded-full bg-teal-400 flex-shrink-0 z-10"></div>
     <div class="flex-1 p-3 rounded-xl bg-teal-50 border border-teal-100">
       <div class="text-sm"><strong class="text-teal-700">修复</strong>：Model 链路断裂导致状态丢失不停重建</div>
       <div class="text-xs text-teal-600 mt-1">修正数据模型传递后假死消失 → <strong>自动验收通过</strong> ✓</div>
