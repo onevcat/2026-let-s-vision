@@ -324,10 +324,6 @@ layout: default
 
 <img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 text-base text-slate-500 text-center">
-  Backlog 膨胀放缓——<strong class="text-slate-700">不是创建变少，是消化变快了</strong>
-</div>
-
 <!--
 - 趋势图：Issue 创建 vs 解决
 - 创建速度趋平，解决速度在追上
