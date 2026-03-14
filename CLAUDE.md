@@ -73,7 +73,7 @@ pnpm export     # 导出幻灯片为 PDF
 
 ### Aesthetic Direction
 - **视觉基调**：简洁精致的浅色主题，注重排版细节、间距考究、层级分明
-- **主色**：Teal (#14b8a6) 贯穿全局，代表 Agent/自动化；Amber 代表规则/规范，Violet 代表知识/记忆
+- **主色**：Teal (#14b8a6) 作为全局主题色贯穿始终；Amber 用于警示/规范/对比；Violet 用于知识/记忆相关内容
 - **字体**：Space Grotesk (sans) + DM Sans (serif) + Fira Code (mono)，权重对比制造层级
 - **动效**：克制有目的，用于揭示信息节奏（v-click 逐步展示），拒绝装饰性动画
 - **参考方向**：Apple Keynote 的留白与节奏感，Stripe 文档的排版精度
@@ -81,7 +81,7 @@ pnpm export     # 导出幻灯片为 PDF
 
 ### Design Principles
 1. **Less but better** — 每页只传递一个核心信息，用留白而非填充来制造重点
-2. **Color is semantic** — 颜色承载含义（teal=agent, amber=spec, violet=memory），不做纯装饰用色
+2. **Color is intentional** — Teal 是主题色，可自由用于强调和层级；Amber/Violet 等辅助色承载语义（警示/知识），不做纯装饰用色
 3. **Typography drives hierarchy** — 通过字重（600–900）和尺寸对比建立视觉层级，而非依赖色彩或边框
 4. **Motion reveals, not decorates** — 动画服务于信息揭示节奏，每个动效都应有叙事目的
 5. **Refined details, not complexity** — 追求间距、对齐、阴影等细节的精致，但拒绝过度设计

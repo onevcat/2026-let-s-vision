@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-<div class="relative" style="height: 360px;">
+<div class="relative" style="height: 410px;">
 
   <!-- Layer 1: Single chain (step 0 & 1) -->
   <div
@@ -80,15 +80,15 @@ const props = defineProps({
     </div>
 
     <!-- Center: Loop area -->
-    <div class="flex-1 relative rounded-2xl border-2 border-teal-300 bg-teal-50/20 px-3 pt-5 pb-4">
+    <div class="flex-1 relative rounded-2xl border-2 border-teal-300 bg-teal-50/20 px-3 pt-6 pb-5">
       <!-- Top label -->
       <div class="absolute -top-3 right-4 bg-white px-2.5 py-0.5 text-sm font-bold text-teal-600 flex items-center gap-1 rounded">
         <carbon-renew class="text-sm" /> Agent 自动循环
       </div>
 
-      <div class="space-y-1">
+      <div class="space-y-2.5">
         <!-- Chain 1 with Context -->
-        <div class="relative rounded px-1.5 py-1 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
+        <div class="relative rounded px-1.5 py-1.5 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
           <span class="absolute -top-1.5 right-1 bg-white px-1 text-[9px] font-semibold text-indigo-300 leading-none transition-opacity duration-700" :class="step >= 3 ? 'opacity-100' : 'opacity-0'">Context</span>
           <div class="flex items-center gap-1">
             <div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 border border-teal-200">
@@ -109,11 +109,11 @@ const props = defineProps({
         </div>
         <!-- Separator 1 -->
         <div class="flex items-center gap-1 pl-3">
-          <carbon-arrow-down class="text-xs text-teal-300" />
-          <span class="text-xs text-teal-400">触发下一轮</span>
+          <carbon-arrow-down class="text-xs text-teal-500" />
+          <span class="text-xs text-teal-600 font-medium">触发下一轮</span>
         </div>
         <!-- Chain 2 with Context -->
-        <div class="relative rounded px-1.5 py-1 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
+        <div class="relative rounded px-1.5 py-1.5 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
           <span class="absolute -top-1.5 right-1 bg-white px-1 text-[9px] font-semibold text-indigo-300 leading-none transition-opacity duration-700" :class="step >= 3 ? 'opacity-100' : 'opacity-0'">Context</span>
           <div class="flex items-center gap-1">
             <div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 border border-teal-200">
@@ -134,11 +134,11 @@ const props = defineProps({
         </div>
         <!-- Separator 2 -->
         <div class="flex items-center gap-1 pl-3">
-          <carbon-arrow-down class="text-xs text-teal-300" />
-          <span class="text-xs text-teal-400">触发下一轮</span>
+          <carbon-arrow-down class="text-xs text-teal-500" />
+          <span class="text-xs text-teal-600 font-medium">触发下一轮</span>
         </div>
         <!-- Chain 3 with Context -->
-        <div class="relative rounded px-1.5 py-1 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
+        <div class="relative rounded px-1.5 py-1.5 transition-all duration-700" :class="step >= 3 ? 'border border-dashed border-indigo-200/70 bg-indigo-50/15' : 'border border-transparent'">
           <span class="absolute -top-1.5 right-1 bg-white px-1 text-[9px] font-semibold text-indigo-300 leading-none transition-opacity duration-700" :class="step >= 3 ? 'opacity-100' : 'opacity-0'">Context</span>
           <div class="flex items-center gap-1">
             <div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 border border-teal-200">

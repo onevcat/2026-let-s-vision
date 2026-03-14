@@ -311,17 +311,28 @@ layout: default
 
 # Issue 消化趋势 <carbon-chart-line class="inline text-slate-400" />
 
+<div class="mt-2 flex items-center justify-center gap-8">
+  <div class="flex items-center gap-3">
+    <carbon-arrow-right class="text-2xl text-slate-300 flex-shrink-0" />
+    <div class="text-xl font-bold text-slate-400">创建速度<span class="text-sm font-normal ml-1.5">趋于平稳</span></div>
+  </div>
+  <div class="flex items-center gap-3">
+    <carbon-arrow-up-right class="text-2xl text-teal-500 flex-shrink-0" />
+    <div class="text-xl font-bold text-teal-700">解决速度<span class="text-sm font-normal text-teal-600 ml-1.5">正在追上</span></div>
+  </div>
+</div>
+
 <img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 text-base text-slate-400">
-  Net Change 趋近零线——<strong class="text-slate-600">解决速度追上了创建速度，Backlog 不再膨胀</strong>
+<div class="mt-4 text-base text-slate-500 text-center">
+  Backlog 膨胀放缓——<strong class="text-slate-700">不是创建变少，是消化变快了</strong>
 </div>
 
 <!--
 - 趋势图：Issue 创建 vs 解决
-- Net Change 从高峰降至零线附近
-- 不是创建变少，是解决速度追上了
-- AI 加速消化任务，前提是问题定义清晰
+- 创建速度趋平，解决速度在追上
+- 不是创建变少，是解决速度在追
+- Backlog 膨胀放缓，AI 加速消化任务
 -->
 
 ---
@@ -330,15 +341,20 @@ layout: default
 
 # AI 使用两极分化 <carbon-chart-line class="inline text-slate-400" />
 
-<img src="/5_ai_developer_scatter.png" class="mt-4 mx-auto rounded-lg shadow-sm" style="max-height: 420px;" />
+<img src="/5_ai_developer_scatter.png" class="mt-4 mx-auto rounded-lg shadow-sm" style="max-height: 380px;" />
+
+<div class="mt-4 flex items-center justify-center gap-4">
+  <span class="text-lg font-bold text-teal-700">少数人 AI 占比 &gt; 80%</span>
+  <span class="text-2xl text-slate-300 font-light">|</span>
+  <span class="text-lg font-bold text-slate-400">不少人 AI 占比 &lt; 20%</span>
+</div>
 
 <!--
 - 散点图：横轴 Commit 数，纵轴 AI Co-Author 占比
 - 右上：高产出 + 高 AI = 高手飞轮
-- 左上：低产出高 AI = 学习/探索中
-- 右下：高产出低 AI = 传统高手未启用
 - 底部大量蓝点 = 完全没有开始
-- 直观展示"AI 格差"，两极分化需主动治理
+- 少数人全面拥抱 AI，大量人零介入，差距显著
+- 两极分化需主动治理
 -->
 
 ---
@@ -1024,7 +1040,7 @@ clicks: 3
     <carbon-connect class="text-lg text-teal-400" />
     <carbon-bot class="text-2xl text-teal-500" />
   </div>
-  <div class="text-base text-teal-600 mt-4">自协作，人做策略与兜底</div>
+  <div class="text-base text-teal-600 mt-4">自主循环，人做策略与兜底</div>
 </div>
 
 </div>
@@ -1342,58 +1358,22 @@ layout: default
 
 <div class="text-base text-gray-500">端到端验收是 Human-in-the-Loop 最重的一环——把它也自动化</div>
 
-<div class="mt-4">
+<div class="mt-6">
 
-<div class="grid grid-cols-2 gap-6">
+<div v-click class="font-bold text-lg mb-4">编写「评估剧本」</div>
 
-<div>
-<div v-click class="font-bold text-lg mb-3">编写「评估剧本」</div>
-
-<div v-click class="px-5 py-4 rounded-xl bg-gray-100 border border-gray-200 font-mono text-sm leading-loose">
+<div v-click class="px-6 py-5 rounded-xl bg-gray-100 border border-gray-200 font-mono text-base leading-loose max-w-3xl">
 <span class="text-gray-400">// 好友聊天功能验收</span><br/>
-<span class="text-teal-800">1. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击「好友列表」Tab</span><br/>
-<span class="text-purple-800">2. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 列表内有内容填满</span><br/>
-<span class="text-teal-800">3. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击第一个好友头像</span><br/>
-<span class="text-purple-800">4. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 画面迁移到聊天详情页</span><br/>
-<span class="text-teal-800">5. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 发送文字消息 "hello"</span><br/>
-<span class="text-purple-800">6. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 消息气泡正常显示</span>
+<span class="text-teal-800">1. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-sm font-bold">action</span> 点击「好友列表」Tab</span><br/>
+<span class="text-purple-800">2. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-sm font-bold">eval</span> 列表内有内容填满</span><br/>
+<span class="text-teal-800">3. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-sm font-bold">action</span> 点击第一个好友头像</span><br/>
+<span class="text-purple-800">4. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-sm font-bold">eval</span> 画面迁移到聊天详情页</span><br/>
+<span class="text-teal-800">5. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-sm font-bold">action</span> 发送文字消息 "hello"</span><br/>
+<span class="text-purple-800">6. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-sm font-bold">eval</span> 消息气泡正常显示</span>
 </div>
 
-<div v-click class="mt-3 text-sm text-gray-500 pl-3">
-  自然语言写的 UI 测试——人能读、AI 能执行
-</div>
-</div>
-
-<div>
-<div v-click class="font-bold text-lg mb-3">执行与验收</div>
-
-<div v-click class="px-5 py-4 rounded-xl bg-teal-50 border border-teal-200 space-y-2.5">
-  <div class="flex items-center gap-4">
-    <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">1</div>
-    <div class="font-bold text-lg">Simulator 自动操作 (a18y, Vision 等)</div>
-  </div>
-  <div class="flex items-center gap-4">
-    <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">2</div>
-    <div class="font-bold text-lg">获取关键信息、截图或视频录制</div>
-  </div>
-  <div class="flex items-center gap-4">
-    <div class="w-8 h-8 rounded-full bg-teal-200 flex items-center justify-center flex-shrink-0 text-sm font-bold text-teal-700">3</div>
-    <div class="font-bold text-lg">决定性断言 + 模型语义断言，逐步验收</div>
-  </div>
-</div>
-
-<div v-click class="mt-5 px-5 py-3.5 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
-  <div class="flex items-center gap-2 text-base">
-    <carbon-checkmark-filled class="text-teal-500 flex-shrink-0" />
-    <span class="text-teal-800 font-semibold">语义级操作 + 断言，天然抗 UI 重构</span>
-  </div>
-  <div class="flex items-center gap-2 text-base">
-    <carbon-checkmark-filled class="text-teal-500 flex-shrink-0" />
-    <span class="text-teal-800 font-semibold">非技术人员也可参与编写验收标准</span>
-  </div>
-</div>
-</div>
-
+<div v-click class="mt-5 text-base text-gray-500">
+  自然语言写的 UI 测试——<strong class="text-slate-700">人能读、AI 能执行</strong>
 </div>
 
 </div>
@@ -1402,14 +1382,114 @@ layout: default
 - 端到端验收是 Loop 中最重的一环
 - [click] 做法：写「评估剧本」
 - [click] 自然语言 UI 测试：action（操作）+ eval（断言）交替
-- 人能读、AI 能执行 = BDD 在 E2E 的延伸
+- action = 用户操作，eval = 预期结果断言
 - [click] 自然语言写的 UI 测试，人和 AI 都能理解
-- [click] 执行与验收
-- [click] 三步：Simulator 自动操作 → 自动截图 → AI 视觉比对
-- 人看截图和录屏，不用手动操作
-- [click] 两大优势：
-  - 语义级断言，天然抗 UI 重构
-  - 非技术人员可直接编写验收标准
+- BDD 在 E2E 的自然延伸
+-->
+
+---
+layout: default
+---
+
+# 验收自动化：执行与验收
+
+<div class="text-base text-gray-500">从自然语言剧本到全自动验收的完整管线</div>
+
+<!-- Pipeline diagram -->
+<div v-click class="mt-5 flex items-stretch gap-2.5">
+
+  <div class="w-24 rounded-xl bg-gray-100 border border-gray-200 p-3 flex flex-col items-center justify-center text-center">
+    <carbon-document class="text-2xl text-slate-500 mb-1.5" />
+    <div class="font-bold text-xs text-slate-700">评估剧本</div>
+    <div class="text-[10px] text-slate-400 mt-0.5">自然语言</div>
+  </div>
+
+  <div class="flex items-center flex-shrink-0"><carbon-arrow-right class="text-lg text-slate-300" /></div>
+
+  <div class="w-28 rounded-xl bg-amber-50 border border-amber-200 p-3 flex flex-col items-center justify-center text-center">
+    <carbon-code class="text-2xl text-amber-600 mb-1.5" />
+    <div class="font-bold text-xs text-amber-800">Compile</div>
+    <div class="text-[10px] text-amber-500 mt-0.5">→ Tool Calls</div>
+  </div>
+
+  <div class="flex items-center flex-shrink-0"><carbon-arrow-right class="text-lg text-slate-300" /></div>
+
+  <div class="flex-1 relative rounded-xl border-2 border-dashed border-teal-300 bg-teal-50/20 px-3 py-3">
+    <div class="absolute -top-2.5 left-3 bg-white px-2 py-0.5 text-xs font-bold text-teal-600 flex items-center gap-1 rounded">
+      <carbon-renew class="text-xs" /> Runner Loop
+    </div>
+    <div class="flex items-stretch gap-2.5 mt-1">
+      <div class="flex-1 rounded-lg bg-white border border-teal-200 p-2.5 text-center">
+        <carbon-touch-interaction class="text-xl text-teal-600 mb-1" />
+        <div class="font-bold text-xs">Operate</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">a11y / Vision</div>
+      </div>
+      <div class="flex items-center flex-shrink-0"><carbon-arrow-right class="text-sm text-teal-300" /></div>
+      <div class="flex-1 rounded-lg bg-white border border-teal-200 p-2.5 text-center">
+        <carbon-checkmark-outline class="text-xl text-teal-600 mb-1" />
+        <div class="font-bold text-xs">Evaluate</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">断言 · 证据</div>
+      </div>
+    </div>
+    <div class="absolute -bottom-2.5 right-3 bg-white px-2 py-0.5 text-[10px] text-teal-500 rounded flex items-center gap-1">
+      <carbon-renew class="text-[10px]" /> 逐步 action / eval
+    </div>
+  </div>
+
+  <div class="flex items-center flex-shrink-0"><carbon-arrow-right class="text-lg text-slate-300" /></div>
+
+  <div class="w-24 rounded-xl bg-teal-100 border border-teal-200 p-3 flex flex-col items-center justify-center text-center">
+    <carbon-task-complete class="text-2xl text-teal-600 mb-1.5" />
+    <div class="font-bold text-xs text-teal-800">验收完成</div>
+    <div class="text-[10px] text-teal-500 mt-0.5">通过 / 失败</div>
+  </div>
+
+</div>
+
+<!-- Detail callouts -->
+<div class="mt-6 grid grid-cols-2 gap-x-8 gap-y-4">
+
+  <div v-click class="flex items-start gap-2.5">
+    <carbon-code class="text-lg text-amber-600 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-sm text-slate-700">剧本编译</div>
+      <div class="text-sm text-slate-500 mt-0.5">自然语言 → 结构化 Tool Calls，确保每步可靠执行</div>
+    </div>
+  </div>
+
+  <div v-click class="flex items-start gap-2.5">
+    <carbon-touch-interaction class="text-lg text-teal-600 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-sm text-slate-700">Simulator 操作</div>
+      <div class="text-sm text-slate-500 mt-0.5">Accessibility API 优先定位；复杂场景 Vision LLM 兜底</div>
+    </div>
+  </div>
+
+  <div v-click class="flex items-start gap-2.5">
+    <carbon-renew class="text-lg text-teal-600 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-sm text-slate-700">Runner 循环</div>
+      <div class="text-sm text-slate-500 mt-0.5">逐步执行 action / eval 对，每步独立验证</div>
+    </div>
+  </div>
+
+  <div v-click class="flex items-start gap-2.5">
+    <carbon-checkmark-outline class="text-lg text-teal-600 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-sm text-slate-700">评估框架</div>
+      <div class="text-sm text-slate-500 mt-0.5">确定性断言 + AI 语义断言，自动收集截图与日志作为证据</div>
+    </div>
+  </div>
+
+</div>
+
+<!--
+- 从评估剧本到全自动验收的管线
+- [click] 管线总览：剧本 → Compile → Runner Loop (Operate ↔ Evaluate) → 验收完成
+- [click] 剧本编译：自然语言转为结构化 Tool Calls
+- [click] Simulator 操作：a11y 优先、Vision LLM 兜底
+- [click] Runner 循环：逐步执行 action/eval 对
+- [click] 评估框架：确定性 + AI 语义双断言，截图日志作证据
 -->
 
 ---
@@ -1423,7 +1503,7 @@ clicks: 4
 
 <div class="mt-1 text-base text-slate-500 font-medium transition-all duration-500">{{ $clicks >= 4 ? '完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
 
-<AgentLoopDiagram :step="$clicks" class="-mt-2" />
+<AgentLoopDiagram :step="$clicks" class="-mt-6" />
 
 <!--
 - 串联前面所有内容
@@ -1565,7 +1645,7 @@ layout: default
 <div class="mt-4 flex items-center gap-4" v-click>
   <div class="flex-1 h-px bg-gray-200"></div>
   <div class="flex items-center gap-3 text-xs">
-    <div class="px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 font-bold text-teal-600">Workaround 提交</div>
+    <div class="px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 font-bold text-teal-600">方案提交</div>
     <div class="px-3 py-1.5 rounded-full bg-violet-50 border border-violet-100 font-bold text-violet-600">写入团队 Memory</div>
     <div class="px-3 py-1.5 rounded-full bg-amber-50 border border-amber-100 font-bold text-amber-600">最小复现工程归档</div>
   </div>
@@ -1580,7 +1660,7 @@ layout: default
 - [click] 迭代 2：假设 NavigationPath 状态冲突 → 部分改善，方向接近
 - [click] 迭代 3：缩小范围，构建最小复现（3 文件）→ 稳定复现
 - [click] 迭代 4：定位根因——Model 链路断裂 → 修复，验收通过
-- [click] 产出：Workaround + 写入 Memory + 最小复现归档
+- [click] 产出：方案提交 + 写入 Memory + 最小复现归档
 - 全程无人介入
 -->
 
