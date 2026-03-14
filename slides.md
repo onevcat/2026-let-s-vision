@@ -1279,28 +1279,29 @@ layout: default
   </div>
 </div>
 
-<!-- Reasoning → Conclusion → Reasoning -->
-<div class="mt-8 relative">
+<!-- Reasoning (left) → Conclusion (right) -->
+<div class="mt-8 flex items-center gap-8">
 
-  <div v-click class="flex items-start gap-3">
-    <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
-    <div>
-      <div class="font-bold text-lg">BDD 天然贴近自然语言</div>
-      <div class="text-base text-slate-500 mt-1">LLM 做自然语言 → 自然语言的翻译，几乎无损</div>
+  <div class="flex-1 space-y-5">
+    <div v-click class="flex items-start gap-3">
+      <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
+      <div>
+        <div class="font-bold text-lg">BDD 天然贴近自然语言</div>
+        <div class="text-base text-slate-500 mt-1">LLM 做自然语言 → 自然语言的翻译，几乎无损</div>
+      </div>
+    </div>
+    <div v-click class="flex items-start gap-3">
+      <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
+      <div>
+        <div class="font-bold text-lg">根据 Spec 生成 Spec Test</div>
+        <div class="text-base text-slate-500 mt-1">Review 对象从代码变成 Spec，验收成本大幅降低</div>
+      </div>
     </div>
   </div>
 
-  <div v-click class="mt-6 ml-8 pl-6 py-4 border-l-3 border-teal-400">
+  <div v-click class="flex-shrink-0 pl-8 border-l-3 border-teal-400 py-2">
     <div class="text-2xl font-black text-slate-800">开发者的新任务</div>
-    <div class="text-lg text-teal-600 mt-1 font-semibold">把 Idea 翻译成可自动化测试的案例</div>
-  </div>
-
-  <div v-click class="mt-6 flex items-start gap-3">
-    <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
-    <div>
-      <div class="font-bold text-lg">根据 Spec 生成 Spec Test</div>
-      <div class="text-base text-slate-500 mt-1">Review 对象从代码变成 Spec，验收成本大幅降低</div>
-    </div>
+    <div class="text-lg text-teal-600 mt-2 font-semibold">把 Idea 翻译成<br/>可自动化测试的案例</div>
   </div>
 
 </div>
