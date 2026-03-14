@@ -1567,55 +1567,39 @@ layout: default
 
 # 早期建设的建议
 
-<div class="text-sm text-gray-500 -mt-2 mb-4">针对刚起步使用 AI 的个人和团队</div>
+<div class="text-base text-slate-400 -mt-2">针对刚起步使用 AI 的个人和团队</div>
 
-<div class="grid grid-cols-2 gap-5 mt-2">
+<div class="mt-8 space-y-6">
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-certificate class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">挑选靠谱的模型商</div>
-  </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 优先选有完善 API + 稳定 SLA 的供应商</div>
-    <div>· 关注上下文窗口和工具调用能力，而非只看跑分</div>
-    <div>· 企业级先确认 data residency 和隐私政策</div>
+<div class="flex items-start gap-5" v-click>
+  <span class="text-[2.5rem] font-black text-slate-200 leading-none w-10 text-right flex-shrink-0">1</span>
+  <div class="pt-1">
+    <div class="text-lg font-bold text-slate-800">挑选靠谱的模型商</div>
+    <div class="text-sm text-slate-500 mt-1">完善 API · 稳定 SLA · 关注上下文窗口和工具调用能力 · 企业级先确认合规</div>
   </div>
 </div>
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-flash class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">大量消耗 Token 做实践</div>
-  </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 设置"token 使用目标"，而非使用限制</div>
-    <div>· 同一任务用不同模型做 A/B 对比，建立直觉</div>
-    <div>· 刻意试探失败边界，摸清能力天花板</div>
+<div class="flex items-start gap-5" v-click>
+  <span class="text-[2.5rem] font-black text-slate-200 leading-none w-10 text-right flex-shrink-0">2</span>
+  <div class="pt-1">
+    <div class="text-lg font-bold text-slate-800">大量消耗 Token 做实践</div>
+    <div class="text-sm text-slate-500 mt-1">设使用目标而非限制 · A/B 对比建立直觉 · 刻意试探失败边界</div>
   </div>
 </div>
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-migrate class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">将现有工作流迁移到 AI</div>
-  </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 从重复性工作入手：审查摘要、i18n、changelog</div>
-    <div>· 先 AI 辅助，再 AI 主导。理解之前，不要一步到全自动</div>
-    <div>· 建立"之前/之后"效果对照，用数据说服团队</div>
+<div class="flex items-start gap-5" v-click>
+  <span class="text-[2.5rem] font-black text-slate-200 leading-none w-10 text-right flex-shrink-0">3</span>
+  <div class="pt-1">
+    <div class="text-lg font-bold text-slate-800">将现有工作流迁移到 AI</div>
+    <div class="text-sm text-slate-500 mt-1">从重复性工作入手 · 先辅助再主导 · 建立前后效果对照，用数据说服团队</div>
   </div>
 </div>
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-idea class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">不要过度纠结工具选型</div>
-  </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 工具在快速迭代，今天的最优解三个月后可能变</div>
-    <div>· 重要的是建立"与 AI 协作"的思维模式</div>
-    <div>· 把精力花在理解约束，而非追逐功能</div>
+<div class="flex items-start gap-5" v-click>
+  <span class="text-[2.5rem] font-black text-slate-200 leading-none w-10 text-right flex-shrink-0">4</span>
+  <div class="pt-1">
+    <div class="text-lg font-bold text-slate-800">不要过度纠结工具选型</div>
+    <div class="text-sm text-slate-500 mt-1">工具在快速迭代 · 重要的是建立与 AI 协作的思维模式</div>
   </div>
 </div>
 
@@ -1635,55 +1619,50 @@ layout: default
 
 # 中期建设的建议
 
-<div class="text-sm text-gray-500 -mt-2 mb-4">针对已有实践经验、希望进一步提升的团队</div>
+<div class="text-base text-slate-400 -mt-2">针对已有实践经验、希望进一步提升的团队</div>
 
-<div class="grid grid-cols-2 gap-5 mt-2">
+<div class="mt-8 space-y-1">
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-meter class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">建立团队 Harness 评测体系</div>
+<div class="flex items-stretch gap-4" v-click>
+  <div class="flex flex-col items-center">
+    <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+    <div class="w-0.5 flex-1 bg-slate-200 mt-1"></div>
   </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 基于 domain 知识自建 harness，门槛已很低</div>
-    <div>· 定期 benchmark，对比不同配置/模型的产出</div>
-    <div>· 评测反馈为配置优化——"评测 → 调优"闭环</div>
+  <div class="pb-5">
+    <div class="font-bold text-lg text-slate-800">建立团队 Harness 评测体系</div>
+    <div class="text-sm text-slate-500 mt-1">自建 benchmark · 评测 → 调优闭环 · domain 知识驱动</div>
   </div>
 </div>
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-save class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">团队经验沉淀</div>
+<div class="flex items-stretch gap-4" v-click>
+  <div class="flex flex-col items-center">
+    <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+    <div class="w-0.5 flex-1 bg-slate-200 mt-1"></div>
   </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 成功的 prompt/skill 提炼为共享知识</div>
-    <div>· 建立 AI 协作案例库——成功和失败都记录</div>
-    <div>· 定期团队分享——缩小"AI 使用差距"</div>
-  </div>
-</div>
-
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-task-approved class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">开始构建验收自动化</div>
-  </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 从最关键的业务流程开始写评估剧本</div>
-    <div>· 建立"变更 → 验证 → 回归"最小闭环</div>
-    <div>· 逐步扩大 Agent 自主验收范围，为无人值守做准备</div>
+  <div class="pb-5">
+    <div class="font-bold text-lg text-slate-800">团队经验沉淀</div>
+    <div class="text-sm text-slate-500 mt-1">prompt/skill 共享 · AI 协作案例库 · 定期分享缩小格差</div>
   </div>
 </div>
 
-<div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
-  <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-bot class="text-xl text-slate-600" /></div>
-    <div class="font-bold text-lg">让基础设施变得 Agent-friendly</div>
+<div class="flex items-stretch gap-4" v-click>
+  <div class="flex flex-col items-center">
+    <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+    <div class="w-0.5 flex-1 bg-slate-200 mt-1"></div>
   </div>
-  <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
-    <div>· 文档和架构记录——从"给人看"到"给 Agent 消费"</div>
-    <div>· 将知识结构化为可注入的 context 源</div>
-    <div>· 内部工具提供 CLI/API，让 Agent 可直接调用</div>
+  <div class="pb-5">
+    <div class="font-bold text-lg text-slate-800">开始构建验收自动化</div>
+    <div class="text-sm text-slate-500 mt-1">核心路径写评估剧本 · 变更 → 验证 → 回归 · 逐步扩大自主验收</div>
+  </div>
+</div>
+
+<div class="flex items-stretch gap-4" v-click>
+  <div class="flex flex-col items-center">
+    <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
+  </div>
+  <div>
+    <div class="font-bold text-lg text-slate-800">让基础设施变得 Agent-friendly</div>
+    <div class="text-sm text-slate-500 mt-1">文档从给人看到给 Agent 消费 · 知识结构化 · 工具 CLI/API 化</div>
   </div>
 </div>
 
