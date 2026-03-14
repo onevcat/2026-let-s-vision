@@ -1268,54 +1268,44 @@ layout: default
 
 # 验收前置
 
-<div class="text-base text-gray-500">先定义"怎么算做完"，再开始做</div>
+<div class="text-base text-slate-500">先定义"怎么算做完"，再开始做</div>
 
-<div class="mt-6 grid grid-cols-2 gap-5">
-
-<div v-click class="px-6 py-5 rounded-xl bg-red-50 border border-red-200">
-  <div class="flex items-center gap-2">
-    <carbon-close-filled class="text-xl text-red-500 flex-shrink-0" />
-    <div class="font-bold text-red-800 text-lg">事后生成测试</div>
-  </div>
-  <div class="text-base text-red-600 mt-2">把实现翻译成测试，低质量测试，人几乎无法验收</div>
+<!-- ❌ Wrong approach -->
+<div v-click class="mt-8 flex items-center gap-3">
+  <carbon-close-filled class="text-2xl text-red-400 flex-shrink-0" />
+  <span class="text-xl text-red-300 line-through decoration-2">事后生成测试——把实现翻译成测试，人几乎无法验收</span>
 </div>
 
-<div v-click class="px-6 py-5 rounded-xl bg-teal-50 border border-teal-200">
-  <div class="flex items-center gap-2">
-    <carbon-checkmark-filled class="text-xl text-teal-500 flex-shrink-0" />
-    <div class="font-bold text-teal-800 text-lg">根据 Spec 生成 Spec Test</div>
+<!-- ✅ Reasoning chain -->
+<div class="mt-8 space-y-5">
+  <div v-click class="flex items-start gap-3">
+    <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-lg">BDD 天然贴近自然语言</div>
+      <div class="text-base text-slate-500 mt-1">LLM 做自然语言 → 自然语言的翻译，几乎无损</div>
+    </div>
   </div>
-  <div class="text-base text-teal-600 mt-2">Review 对象从代码变成 Spec，验收成本大幅降低</div>
+  <div v-click class="flex items-start gap-3">
+    <carbon-checkmark-filled class="text-xl text-teal-500 mt-0.5 flex-shrink-0" />
+    <div>
+      <div class="font-bold text-lg">根据 Spec 生成 Spec Test</div>
+      <div class="text-base text-slate-500 mt-1">Review 对象从代码变成 Spec，验收成本大幅降低</div>
+    </div>
+  </div>
 </div>
 
-<div v-click class="px-6 py-5 rounded-xl bg-gray-50 border border-gray-200">
-  <div class="flex items-center gap-2">
-    <carbon-translate class="text-xl text-teal-500 flex-shrink-0" />
-    <div class="font-bold text-lg">BDD 天然贴近自然语言</div>
-  </div>
-  <div class="text-base text-gray-500 mt-2">LLM 做自然语言 → 自然语言的翻译，几乎无损</div>
-</div>
-
-<div v-click class="px-6 py-5 rounded-xl bg-teal-50 border border-teal-200">
-  <div class="flex items-center gap-2">
-    <carbon-user class="text-xl text-teal-500 flex-shrink-0" />
-    <div class="font-bold text-lg">开发者的新任务</div>
-  </div>
-  <div class="text-base text-teal-600 mt-2">把 Idea 翻译成可自动化测试的案例</div>
-</div>
-
+<!-- → Conclusion -->
+<div v-click class="mt-10">
+  <div class="text-3xl font-black text-slate-800">开发者的新任务</div>
+  <div class="text-xl text-teal-600 mt-2 font-semibold">把 Idea 翻译成可自动化测试的案例</div>
 </div>
 
 <!--
 - 先定义"怎么算做完"
-- [click] 事后生成测试无用：AI 只是把实现翻译成测试，不验证行为
-- 人 Review 这些测试也很困难
-- [click] 正确做法：根据 Spec 生成 Spec Test
-- Review 对象从代码变成 Spec（自然语言），成本大降
-- [click] BDD 天然贴近自然语言
-- LLM 做自然语言→自然语言翻译几乎无损
-- [click] 开发者新任务：把 Idea 翻译成可自动化测试的案例
-- 验收行为，而非验收代码
+- [click] 事后生成测试无用：AI 只是把实现翻译成测试，不验证行为，人几乎无法验收
+- [click] BDD 天然贴近自然语言，LLM 做自然语言→自然语言翻译几乎无损
+- [click] 根据 Spec 生成 Spec Test，Review 对象从代码变成 Spec，成本大降
+- [click] 推导出开发者新任务：把 Idea 翻译成可自动化测试的案例
 -->
 
 ---
