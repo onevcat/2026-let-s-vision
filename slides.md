@@ -276,7 +276,7 @@ layout: default
 # AI 协作占比
 
 <div class="mt-4 relative">
-  <div class="absolute top-2 left-4 z-10">
+  <div class="absolute top-8 left-16 z-10">
     <div class="flex items-baseline gap-2">
       <span class="text-4xl font-black text-slate-300">1%</span>
       <span class="text-xl text-slate-300">→</span>
