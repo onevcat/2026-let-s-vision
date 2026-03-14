@@ -254,11 +254,21 @@ layout: default
 <div class="mt-2 grid grid-rows-2 gap-3">
   <div class="flex items-center gap-6">
     <img src="/1_weekly_pr_count.png" class="w-1/2 rounded-lg shadow-sm" />
-    <div class="text-base text-slate-400"><strong class="text-lg text-slate-600">粒度在变大</strong><br/>总量稳定，单 PR 改动量增加</div>
+    <div>
+      <div class="text-lg font-bold text-slate-600">PR 粒度在变大</div>
+      <div class="text-sm text-slate-400 mt-1">总量稳定，单 PR 改动量增加</div>
+    </div>
   </div>
   <div class="flex items-center gap-6">
     <img src="/2_monthly_merge_time.png" class="w-1/2 rounded-lg shadow-sm" />
-    <div class="text-base text-slate-400"><strong class="text-lg text-slate-600">Review 效率倍增</strong><br/>均值 51h → 20h</div>
+    <div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-3xl font-black text-slate-300">51h</span>
+        <span class="text-lg text-slate-300">→</span>
+        <span class="text-3xl font-black text-slate-700">20h</span>
+      </div>
+      <div class="text-sm text-slate-400 mt-1">Review 效率倍增，中位数降至个位</div>
+    </div>
   </div>
 </div>
 
