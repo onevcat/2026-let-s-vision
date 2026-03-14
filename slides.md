@@ -1641,7 +1641,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-meter class="text-xl text-violet-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-meter class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">建立团队 Harness 评测体系</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1653,7 +1653,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-save class="text-xl text-violet-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-save class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">团队经验沉淀</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1665,7 +1665,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-task-approved class="text-xl text-violet-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-task-approved class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">开始构建验收自动化</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1677,7 +1677,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center"><carbon-bot class="text-xl text-violet-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-bot class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">让基础设施变得 Agent-friendly</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
