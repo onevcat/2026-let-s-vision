@@ -251,16 +251,14 @@ layout: default
 
 # PR 趋势 <carbon-chart-line class="inline text-slate-400" />
 
-<div class="mt-4 grid grid-cols-2 gap-5">
-  <div>
-    <div class="text-sm font-semibold text-slate-500 mb-2">每周 PR 数量</div>
-    <img src="/1_weekly_pr_count.png" class="w-full rounded-lg shadow-sm" />
-    <div class="mt-2 text-sm text-slate-400"><strong class="text-slate-600">粒度在变大</strong> — 总量稳定，单 PR 改动量增加</div>
+<div class="mt-2 grid grid-rows-2 gap-3">
+  <div class="flex items-center gap-4">
+    <img src="/1_weekly_pr_count.png" class="w-3/5 rounded-lg shadow-sm" />
+    <div class="text-sm text-slate-400"><strong class="text-slate-600">粒度在变大</strong> — 总量稳定，单 PR 改动量增加</div>
   </div>
-  <div>
-    <div class="text-sm font-semibold text-slate-500 mb-2">PR 合并效率</div>
-    <img src="/2_monthly_merge_time.png" class="w-full rounded-lg shadow-sm" />
-    <div class="mt-2 text-sm text-slate-400"><strong class="text-slate-600">Review 效率倍增</strong> — 均值 51h → 20h</div>
+  <div class="flex items-center gap-4">
+    <img src="/2_monthly_merge_time.png" class="w-3/5 rounded-lg shadow-sm" />
+    <div class="text-sm text-slate-400"><strong class="text-slate-600">Review 效率倍增</strong> — 均值 51h → 20h</div>
   </div>
 </div>
 
@@ -277,17 +275,16 @@ layout: default
 
 # AI 协作占比
 
-<div class="mt-4 flex items-start gap-8">
-  <div class="flex-shrink-0">
-    <div class="text-sm font-semibold text-slate-400 mb-2">半年变化</div>
-    <div class="flex items-baseline gap-3">
-      <span class="text-5xl font-black text-slate-300">1%</span>
-      <span class="text-2xl text-slate-300">→</span>
-      <span class="text-[5rem] font-black text-teal-600 leading-none">40%</span>
+<div class="mt-4 relative">
+  <div class="absolute top-2 left-4 z-10">
+    <div class="flex items-baseline gap-2">
+      <span class="text-4xl font-black text-slate-300">1%</span>
+      <span class="text-xl text-slate-300">→</span>
+      <span class="text-[4.5rem] font-black text-teal-600 leading-none">40%</span>
     </div>
-    <div class="mt-3 text-base text-slate-500">AI Co-Authored PR 占比<br/>从尝鲜变为常态</div>
+    <div class="mt-1 text-sm text-slate-500">半年内，AI 协作从尝鲜变为常态</div>
   </div>
-  <img src="/3_ai_coauthor_trend.png" class="flex-1 rounded-lg shadow-sm mt-1" />
+  <img src="/3_ai_coauthor_trend.png" class="w-full rounded-lg shadow-sm" />
 </div>
 
 <!--
