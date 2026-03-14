@@ -342,31 +342,36 @@ layout: default
 
 ---
 layout: center
+transition: fade
 ---
 
-<div class="flex flex-col items-center justify-center h-full">
-  <div class="text-6xl font-bold tracking-tight">序章已经落下</div>
-  <div class="w-24 h-1 bg-slate-300 rounded-full mt-6 mb-8"></div>
+<div class="absolute inset-0 bg-slate-900 overflow-hidden">
 
-  <div class="flex gap-2 w-full max-w-2xl" style="transform: scale(0.7); transform-origin: center;">
-    <TimelineStage label="Phase I" title="Tab 补全">AI 进入编码动作</TimelineStage>
-    <TimelineStage label="Phase II" title="Chatbot">同步提示-响应回路</TimelineStage>
-    <TimelineStage label="Phase III" title="AI Editor">仓内上下文协作</TimelineStage>
-    <TimelineStage label="Phase IV" title="Code Agent">长任务 / 少指令 / 自主</TimelineStage>
-  </div>
+<!-- Subtle diagonal grid -->
+<div class="absolute inset-0 opacity-[0.06]" style="background: repeating-linear-gradient(45deg, transparent, transparent 60px, #94a3b8 60px, #94a3b8 61px);"></div>
+
+<div class="absolute inset-0 flex flex-col items-center justify-center px-16">
+
+  <div class="text-sm font-bold text-slate-500 tracking-[0.3em] uppercase mb-6">Phase I → II → III → IV</div>
+
+  <div class="text-7xl font-black text-white tracking-tight leading-none">序章已经落下</div>
+
+  <div class="w-20 h-1 bg-teal-500 rounded-full mt-8 mb-10"></div>
 
   <v-click>
-    <div class="mt-8 flex gap-8 text-base tracking-wide">
-      <div class="flex items-start gap-2 opacity-60">
-        <carbon-view class="text-slate-400 mt-0.5 flex-shrink-0" />
+    <div class="flex gap-10 text-base tracking-wide">
+      <div class="flex items-center gap-2 text-slate-400">
+        <carbon-view class="text-teal-400 flex-shrink-0" />
         <span>我们观察到的现象和实践</span>
       </div>
-      <div class="flex items-start gap-2 opacity-60">
-        <carbon-roadmap class="text-slate-400 mt-0.5 flex-shrink-0" />
+      <div class="flex items-center gap-2 text-slate-400">
+        <carbon-roadmap class="text-teal-400 flex-shrink-0" />
         <span>推进中遇到的阻力与对策</span>
       </div>
     </div>
   </v-click>
+
+</div>
 </div>
 
 <!--
