@@ -1469,7 +1469,7 @@ layout: default
 <div class="mt-4 relative">
 
 <!-- Vertical timeline line -->
-<div class="absolute left-[5.375rem] top-3 bottom-20 w-0.5 bg-slate-100"></div>
+<div class="absolute left-[6.1rem] top-3 bottom-20 w-0.5 bg-slate-200"></div>
 
 <div class="space-y-2.5">
   <div class="flex items-center gap-3" v-click>
