@@ -253,8 +253,8 @@ layout: default
 
 <img src="/1_weekly_pr_count.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
-  PR 总量保持稳定，趋势线微降——不是产出变少了，而是 PR 粒度在变大
+<div class="mt-4 text-base text-slate-400">
+  PR 总量保持稳定，趋势线微降——<strong class="text-slate-600">不是产出变少了，而是 PR 粒度在变大</strong>
 </div>
 
 <!--
@@ -273,8 +273,8 @@ layout: default
 
 <img src="/2_monthly_merge_time.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
-  均值从 50+ 小时降至 20 小时，中位数降至个位——Review 效率在倍增
+<div class="mt-4 text-base text-slate-400">
+  均值从 50+ 小时降至 20 小时，中位数降至个位——<strong class="text-slate-600">Review 效率在倍增</strong>
 </div>
 
 <!--
@@ -292,8 +292,8 @@ layout: default
 
 <img src="/3_ai_coauthor_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
-  半年内从 1% 飙升至 40%——AI 协作已从尝鲜变为常态
+<div class="mt-4 text-base text-slate-400">
+  半年内从 1% 飙升至 40%——<strong class="text-slate-600">AI 协作已从尝鲜变为常态</strong>
 </div>
 
 <!--
@@ -312,8 +312,8 @@ layout: default
 
 <img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
-<div class="mt-4 pl-5 border-l-3 border-teal-300 text-base opacity-60">
-  Net Change 趋近零线——解决速度追上了创建速度，Backlog 不再膨胀
+<div class="mt-4 text-base text-slate-400">
+  Net Change 趋近零线——<strong class="text-slate-600">解决速度追上了创建速度，Backlog 不再膨胀</strong>
 </div>
 
 <!--
@@ -843,20 +843,20 @@ layout: default
 
 <div class="mt-8 space-y-8">
 
-<div v-click class="pl-5 border-l-3 border-teal-300">
+<div v-click>
   <div class="flex items-center gap-2 mb-1">
     <carbon-explore class="text-xl text-teal-600" />
     <span class="font-bold text-lg">没有公认的最佳实践——让高手先跑</span>
   </div>
-  <div class="text-base opacity-60 leading-relaxed">业界仍在摸索，过早统一标准反而限制探索空间。在安全合规的底线之上，放手让有好奇心的核心开发者自由编排。</div>
+  <div class="text-base opacity-60 leading-relaxed ml-7">业界仍在摸索，过早统一标准反而限制探索空间。在安全合规的底线之上，放手让有好奇心的核心开发者自由编排。</div>
 </div>
 
-<div v-click class="pl-5 border-l-3 border-teal-300">
+<div v-click>
   <div class="flex items-center gap-2 mb-1">
     <carbon-compare class="text-xl text-teal-600" />
     <span class="font-bold text-lg">鼓励多 Harness 并存与比较</span>
   </div>
-  <div class="text-base opacity-60 leading-relaxed">Claude Code、Codex、Pi、OpenCode……让高手充分体验每个工具的长短，抽选甚至构建最适合团队的 Harness。</div>
+  <div class="text-base opacity-60 leading-relaxed ml-7">Claude Code、Codex、Pi、OpenCode……让高手充分体验每个工具的长短，抽选甚至构建最适合团队的 Harness。</div>
 </div>
 
 <div v-click class="pl-5 border-l-3 border-teal-500 bg-teal-50/50 py-4 pr-4 rounded-r-lg">
@@ -919,7 +919,7 @@ layout: default
   </div>
 </div>
 
-<div v-click class="mt-3 text-xs opacity-50 pl-3 border-l-2 border-gray-300 leading-relaxed">
+<div v-click class="mt-3 text-xs opacity-50 pl-3 leading-relaxed">
   逐步替代 Wiki → 本地化文档 + 索引<br/>面向未来的基础建设，让 Agent 主动消费知识
 </div>
 </div>
@@ -1054,8 +1054,8 @@ layout: default
 
 </div>
 
-<div v-click class="mt-10 mx-auto pl-5 border-l-3 border-gray-300 text-xl text-gray-500" style="max-width: 80%;">
-  我们的中期目标：把人从 Loop 中移除，走向无人值守
+<div v-click class="mt-10 text-xl text-center text-slate-400">
+  我们的中期目标：把人从 Loop 中移除，走向<strong class="text-slate-600">无人值守</strong>
 </div>
 
 <!--
@@ -1106,8 +1106,8 @@ layout: default
 
 </div>
 
-<div v-click class="mt-8 mx-auto pl-5 border-l-3 border-teal-300 text-xl text-gray-500" style="max-width: 80%;">
-  不需要人坐到电脑前——事件发生时，Agent 自动响应
+<div v-click class="mt-8 text-xl text-center text-slate-400">
+  不需要人坐到电脑前——事件发生时，<strong class="text-slate-600">Agent 自动响应</strong>
 </div>
 
 <!--
@@ -1309,7 +1309,7 @@ layout: default
 <span class="text-purple-800">6. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 消息气泡正常显示</span>
 </div>
 
-<div v-click class="mt-3 text-sm text-gray-500 pl-3 border-l-2 border-gray-300">
+<div v-click class="mt-3 text-sm text-gray-500 pl-3">
   自然语言写的 UI 测试——人能读、AI 能执行
 </div>
 </div>
@@ -1429,7 +1429,7 @@ layout: default
     <span class="text-teal-800">5. <span class="bg-teal-200 text-teal-900 px-1.5 py-0.5 rounded text-xs font-bold">action</span> 点击「修改昵称」进入三级页</span><br/>
     <span class="text-purple-800">6. <span class="bg-purple-200 text-purple-900 px-1.5 py-0.5 rounded text-xs font-bold">eval</span> 页面正常显示，<strong>UI 可交互、未假死</strong></span>
   </div>
-  <div class="mt-2 text-xs text-gray-500 pl-3 border-l-2 border-gray-300">
+  <div class="mt-2 text-xs text-gray-500 pl-3">
     人能读、AI 能执行——与前面「评估剧本」格式一致
   </div>
 </div>

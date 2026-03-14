@@ -26,15 +26,18 @@
 
 ## Priority Issues
 
-### 1. 左侧边框滥用 — 视觉标点失效
+### 1. ✅ 左侧边框滥用 — 视觉标点失效 — 已修复
 
-**What**: `border-l-3 border-teal-300` 在 8+ 处 slides 中反复出现，作为引述/要点的装饰。
+**What**: `border-l-3` 在 14 处 slides 中反复出现，作为引述/要点的装饰。
 
-**Why it matters**: 当同一个视觉符号到处出现，它就停止传递信号了。观众第三次看到那条 teal 竖线时，已经不会再注意它。更关键的是，这恰好是 frontend-design skill 明确标记的 AI anti-pattern。
+**Why it matters**: 当同一个视觉符号到处出现，它就停止传递信号了。
 
-**Fix**: 全面减少使用频次。数据趋势 slides (S08-S11) 的 callout 可以改用不同形式——比如直接用更大的字重作为 pull quote，或者用一个轻微的背景色块。保留 2-3 处最重要位置的使用（如 S21 的关键论断），让这个符号重新变得有意义。
-
-**Command**: `/distill`
+**Fix applied** (14 → 3):
+- **S08-S11 chart callouts**: 去掉边框，改为纯文本 + bold 关键洞察（`——` 后的部分加粗）
+- **S22 前两条 key points**: 去掉边框，靠 icon + bold 标题 + `ml-7` 缩进建立层级
+- **S25, S26 pull quotes**: 去掉边框，改为居中文本 + bold 关键词
+- **S23, S30, S32 sub-notes**: 去掉 `border-l-2`，保留缩进和 opacity
+- **保留 3 处**: S21（核心论断）、S22 第三条（带背景高亮）、S27（紫色语义边框）
 
 ### 2. 数据 slides (S08-S12) 结构完全重复
 
