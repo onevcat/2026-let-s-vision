@@ -1299,7 +1299,9 @@ layout: default
     </div>
   </div>
 
-  <div v-click class="flex-shrink-0 pl-8 border-l-3 border-teal-400 py-2">
+  <carbon-arrow-right class="text-2xl text-teal-300 flex-shrink-0" />
+
+  <div v-click class="flex-shrink-0 pl-6 border-l-3 border-teal-400 py-2">
     <div class="text-2xl font-black text-slate-800">开发者的新任务</div>
     <div class="text-lg text-teal-600 mt-2 font-semibold">把 Idea 翻译成<br/>可自动化测试的案例</div>
   </div>
