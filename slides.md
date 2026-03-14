@@ -1372,9 +1372,11 @@ layout: default
 clicks: 4
 ---
 
-# 闭环：Agent to Agent
+<div class="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-teal-50/40 to-transparent pointer-events-none"></div>
 
-<div class="mt-1 text-base text-gray-500">{{ $clicks >= 4 ? '完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
+# 闭环：<span class="text-teal-600">Agent to Agent</span>
+
+<div class="mt-1 text-base text-slate-500 font-medium transition-all duration-500">{{ $clicks >= 4 ? '完成后沉淀 Skill & Memory' : ($clicks >= 3 ? '每一轮都是一个独立的 Context' : ($clicks >= 2 ? '人定规矩，Agent 自主迭代' : ($clicks >= 1 ? '起点和终点都交给 Agent' : '中间过程已自动化，但起点和终点仍是人'))) }}</div>
 
 <AgentLoopDiagram :step="$clicks" class="-mt-2" />
 
