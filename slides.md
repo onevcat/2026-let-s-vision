@@ -102,8 +102,8 @@ layout: new-section
 
 <div class="flex justify-center">
 <div class="text-left space-y-3">
-<p class="!opacity-80 !text-3xl flex items-center"><carbon-map class="text-teal-400 mr-2 text-3xl flex-shrink-0" />我们是怎么走到今天这一步的？</p>
-<p class="!opacity-80 !text-3xl flex items-center"><carbon-compass class="text-teal-400 mr-2 text-3xl flex-shrink-0" />为今后的工程决策定坐标</p>
+<p class="!opacity-80 !text-3xl flex items-center"><carbon-map class="text-slate-400 mr-2 text-3xl flex-shrink-0" />我们是怎么走到今天这一步的？</p>
+<p class="!opacity-80 !text-3xl flex items-center"><carbon-compass class="text-slate-400 mr-2 text-3xl flex-shrink-0" />为今后的工程决策定坐标</p>
 </div>
 </div>
 
@@ -189,7 +189,7 @@ clicks: 4
 layout: new-section
 ---
 
-# <carbon-chart-line-smooth class="inline text-teal-400 mr-2" /> 趋势汇报
+# <carbon-chart-line-smooth class="inline text-slate-400 mr-2" /> 趋势汇报
 
 <div class="mt-4 text-3xl opacity-70">
 一个大型 iOS 开发团队的变化实例
@@ -249,7 +249,7 @@ layout: default
 layout: default
 ---
 
-# 每周 PR 数量 <carbon-chart-line class="inline text-teal-500" />
+# 每周 PR 数量 <carbon-chart-line class="inline text-slate-400" />
 
 <img src="/1_weekly_pr_count.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
@@ -269,7 +269,7 @@ layout: default
 layout: default
 ---
 
-# PR 合并效率 <carbon-chart-line class="inline text-teal-500" />
+# PR 合并效率 <carbon-chart-line class="inline text-slate-400" />
 
 <img src="/2_monthly_merge_time.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
@@ -288,7 +288,7 @@ layout: default
 layout: default
 ---
 
-# AI 协作占比 <carbon-chart-line class="inline text-teal-500" />
+# AI 协作占比 <carbon-chart-line class="inline text-slate-400" />
 
 <img src="/3_ai_coauthor_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
@@ -308,7 +308,7 @@ layout: default
 layout: default
 ---
 
-# Issue 消化趋势 <carbon-chart-line class="inline text-teal-500" />
+# Issue 消化趋势 <carbon-chart-line class="inline text-slate-400" />
 
 <img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
 
@@ -327,7 +327,7 @@ layout: default
 layout: default
 ---
 
-# AI 使用两极分化 <carbon-chart-line class="inline text-teal-500" />
+# AI 使用两极分化 <carbon-chart-line class="inline text-slate-400" />
 
 <img src="/5_ai_developer_scatter.png" class="mt-4 mx-auto rounded-lg shadow-sm" style="max-height: 420px;" />
 
@@ -346,7 +346,7 @@ layout: center
 
 <div class="flex flex-col items-center justify-center h-full">
   <div class="text-6xl font-bold tracking-tight">序章已经落下</div>
-  <div class="w-24 h-1 bg-teal-500 rounded-full mt-6 mb-8"></div>
+  <div class="w-24 h-1 bg-slate-300 rounded-full mt-6 mb-8"></div>
 
   <div class="flex gap-2 w-full max-w-2xl" style="transform: scale(0.7); transform-origin: center;">
     <TimelineStage label="Phase I" title="Tab 补全">AI 进入编码动作</TimelineStage>
@@ -358,11 +358,11 @@ layout: center
   <v-click>
     <div class="mt-8 flex gap-8 text-base tracking-wide">
       <div class="flex items-start gap-2 opacity-60">
-        <carbon-view class="text-teal-500 mt-0.5 flex-shrink-0" />
+        <carbon-view class="text-slate-400 mt-0.5 flex-shrink-0" />
         <span>我们观察到的现象和实践</span>
       </div>
       <div class="flex items-start gap-2 opacity-60">
-        <carbon-roadmap class="text-teal-500 mt-0.5 flex-shrink-0" />
+        <carbon-roadmap class="text-slate-400 mt-0.5 flex-shrink-0" />
         <span>推进中遇到的阻力与对策</span>
       </div>
     </div>
@@ -1186,28 +1186,28 @@ layout: default
 <div v-click class="grid grid-cols-2 gap-3">
   <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
     <div class="flex items-center gap-2">
-      <carbon-pull-request class="text-xl text-teal-500 flex-shrink-0" />
+      <carbon-pull-request class="text-xl text-slate-500 flex-shrink-0" />
       <div class="font-bold text-sm">PR Review</div>
     </div>
     <div class="text-sm text-gray-500 mt-1">Spec = PR Description</div>
   </div>
   <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
     <div class="flex items-center gap-2">
-      <carbon-task class="text-xl text-teal-500 flex-shrink-0" />
+      <carbon-task class="text-xl text-slate-500 flex-shrink-0" />
       <div class="font-bold text-sm">Feature Issue</div>
     </div>
     <div class="text-sm text-gray-500 mt-1">Spec = 确认后的 Wiki 文档</div>
   </div>
   <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
     <div class="flex items-center gap-2">
-      <carbon-debug class="text-xl text-teal-500 flex-shrink-0" />
+      <carbon-debug class="text-xl text-slate-500 flex-shrink-0" />
       <div class="font-bold text-sm">Bug Fix</div>
     </div>
     <div class="text-sm text-gray-500 mt-1">Spec = QA Ticket 复现步骤</div>
   </div>
   <div class="px-4 py-3 rounded-xl bg-gray-50 border border-gray-200">
     <div class="flex items-center gap-2">
-      <carbon-warning-alt class="text-xl text-teal-500 flex-shrink-0" />
+      <carbon-warning-alt class="text-xl text-slate-500 flex-shrink-0" />
       <div class="font-bold text-sm">CI Failure</div>
     </div>
     <div class="text-sm text-gray-500 mt-1">Spec = CI 错误 Log</div>
@@ -1573,7 +1573,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-certificate class="text-xl text-teal-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-certificate class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">挑选靠谱的模型商</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1585,7 +1585,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-flash class="text-xl text-teal-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-flash class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">大量消耗 Token 做实践</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1597,7 +1597,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-migrate class="text-xl text-teal-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-migrate class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">将现有工作流迁移到 AI</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">
@@ -1609,7 +1609,7 @@ layout: default
 
 <div class="rounded-xl bg-white border border-slate-200 shadow-sm p-5" v-click>
   <div class="flex items-center gap-2 mb-3">
-    <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center"><carbon-idea class="text-xl text-teal-600" /></div>
+    <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"><carbon-idea class="text-xl text-slate-600" /></div>
     <div class="font-bold text-lg">不要过度纠结工具选型</div>
   </div>
   <div class="text-sm text-slate-700 space-y-1 leading-relaxed">

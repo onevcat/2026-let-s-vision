@@ -68,19 +68,18 @@
 
 **Command**: `/distill`
 
-### 4. Teal 过饱和
+### 4. ✅ Teal 过饱和 — 已修复（第一轮）
 
-**What**: 全 37 页中，几乎每一页都有 teal 元素——bg-teal-50、border-teal-200、text-teal-600、甚至标题里的 carbon icon 也是 text-teal-500。
+**What**: 全 37 页中几乎每页都有 teal，语义被稀释。
 
-**Why it matters**: 当 teal 什么都代表时，它就什么都不代表了。设计原则说"color is semantic"，但 teal 目前承担了太多角色——既是 agent 标识色，也是通用强调色、链接色、背景色、边框色。语义被稀释了。
-
-**Fix**:
-- 在非 agent 语义的场景中换用中性色（slate/gray 背景、不带色彩倾向的边框）
-- 只在明确表示 agent/自动化 概念时使用 teal
-- 数据趋势 slides 的图表 callout 不需要 teal——用 gray 就够了
-- 这会让 S31 AgentLoopDiagram 中 teal 的出现更有冲击力
-
-**Command**: `/colorize`
+**Fix applied** (去掉 19 行 teal，集中在非 agent 语义位置):
+- **S03**: 导航 icons (`carbon-map`, `carbon-compass`) → `text-slate-400`
+- **S06**: 章节标题 icon → `text-slate-400`
+- **S08-S12**: 5 个图表标题 `<carbon-chart-line>` → `text-slate-400`
+- **S13**: 装饰分隔线 → `bg-slate-300`；观察/路线 icons → `text-slate-400`
+- **S28**: 4 个 Spec 类型 icons (PR/Feature/Bug/CI) → `text-slate-500`
+- **S35**: 4 个建议卡片 icon 背景 + 颜色 → `bg-slate-100` + `text-slate-600`
+- **保留 teal**: S15-S27 agent/自动化相关的卡片、S19 注意力图表、S20 能力条、S24 协作范式、S26 触发机制、S30-S33 评估剧本等
 
 ### 5. S35/S36 建议 slides 过于模板化
 
