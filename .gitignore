@@ -1,4 +1,15 @@
+.DS_Store
 node_modules
 .slidev-dist
-.claude/
-.codex/
+.agent/
+.continue/
+.crush/
+.factory/
+.junie/
+.kilocode/
+.pi/
+.trae/
+.windsurf/
+__pycache__/
+dist/
+
