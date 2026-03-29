@@ -1792,7 +1792,7 @@ layout: end
 <div class="text-center">
   <div class="text-sm font-bold text-slate-300 tracking-[0.3em] uppercase mb-8">Thank You</div>
 
-  <div class="flex items-center justify-center gap-5 text-3xl font-black text-white mb-10">
+  <div class="flex items-center justify-center gap-5 text-3xl font-black text-white mb-8">
     <span>定义边界</span>
     <span class="w-1.5 h-1.5 rounded-full bg-teal-500 flex-shrink-0"></span>
     <span>沉淀实践</span>
@@ -1800,7 +1800,18 @@ layout: end
     <span>让 Agent 闭环</span>
   </div>
 
-  <div class="w-16 h-1 bg-teal-500 rounded-full mx-auto mb-8"></div>
+  <div class="w-16 h-1 bg-teal-500 rounded-full mx-auto mb-6"></div>
+
+  <div class="flex items-center justify-center gap-16 mb-6">
+    <div class="rounded-xl bg-white px-3 py-3 shadow-lg">
+      <img src="/qr-onev-cat.png" class="w-28 h-28 rounded-sm" />
+      <div class="mt-2 text-[0.72rem] leading-none font-semibold text-slate-700 tracking-[0.12em] uppercase">onev.cat</div>
+    </div>
+    <div class="rounded-xl bg-white px-3 py-3 shadow-lg">
+      <img src="/qr-onevcat-com.png" class="w-28 h-28 rounded-sm" />
+      <div class="mt-2 text-[0.72rem] leading-none font-semibold text-slate-700 tracking-[0.12em] uppercase">onevcat.com</div>
+    </div>
+  </div>
 
   <div class="text-base opacity-60 mb-1.5">Wei Wang</div>
   <div class="flex items-center justify-center gap-4 text-sm opacity-40">
