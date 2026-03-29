@@ -8,7 +8,7 @@ fonts:
   sans: Space Grotesk
   serif: DM Sans
   mono: Fira Code
-  provider: google
+  provider: coollabs
 themeConfig:
   logoHeader: ''
   twitter: ''
@@ -301,32 +301,6 @@ layout: default
 - 半年内 1% → 50%，对于大型团队来说是个不错的结果
 - 去年12月开始，指数型增长，与模型能力台阶式提升吻合
 - 从少数人尝鲜变成团队日常
--->
-
----
-layout: default
----
-
-# Issue 消化趋势 <carbon-chart-line class="inline text-slate-400" />
-
-<div class="mt-2 flex items-center justify-center gap-8">
-  <div class="flex items-center gap-3">
-    <carbon-arrow-right class="text-2xl text-slate-300 flex-shrink-0" />
-    <div class="text-xl font-bold text-slate-400">创建速度<span class="text-sm font-normal ml-1.5">趋于平稳</span></div>
-  </div>
-  <div class="flex items-center gap-3">
-    <carbon-arrow-up-right class="text-2xl text-teal-500 flex-shrink-0" />
-    <div class="text-xl font-bold text-teal-700">解决速度<span class="text-sm font-normal text-teal-600 ml-1.5">正在追上</span></div>
-  </div>
-</div>
-
-<img src="/4_jira_issue_trend.png" class="w-full mt-4 rounded-lg shadow-sm" />
-
-<!--
-- 趋势图：Issue 创建 vs 解决
-- 创建速度趋平，解决速度在追上
-- 不是创建变少，是解决速度在追
-- Backlog 膨胀放缓，AI 加速消化任务
 -->
 
 ---

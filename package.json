@@ -5,7 +5,8 @@
     "dev": "slidev --open",
     "build": "slidev build",
     "export": "slidev export --per-slide",
-    "export:png": "slidev export --format png --output slides"
+    "export:png": "slidev export --format png --output slides",
+    "postinstall": "node scripts/patch-font-cdn.mjs"
   },
   "dependencies": {
     "@iconify-json/carbon": "^1.2.8",
